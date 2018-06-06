@@ -35,15 +35,21 @@ void LCDSendChar(LCDInterface* interface, char c){
 }
 
 void LCDSendText(LCDInterface* interface, char* data){
-    int i;
-    for (i=0; i<strlen(data); i++)
-        LCDSendChar(interface, data[i]);
+    char *c = data;
+    while(*c != '\0'){
+        LCDSendChar(interface, *c);
+        c++;
+    }
 }
 
 void LCDSendInstruction(LCDInterface* interface){
     int i;
+    LcdInstruction instruction = interface->instruction;
+    char data = interface->data;
     HAL_GPIO_WritePin((interface->pinout[10]).port,(interface->pinout[10]).pin,1);
     while (OperationEnCours(interface)){}
+    interface->data = data;
+    interface->instruction = instruction;
     for (i=0; i<10; i++){
         if (1<<i & (interface->instruction | interface->data)){
             HAL_GPIO_WritePin((interface->pinout[i]).port,(interface->pinout[i]).pin,1);
@@ -52,7 +58,6 @@ void LCDSendInstruction(LCDInterface* interface){
             HAL_GPIO_WritePin((interface->pinout[i]).port,(interface->pinout[i]).pin,0);
         }
     }
-    while (OperationEnCours(interface)){}
     HAL_GPIO_WritePin((interface->pinout[10]).port,(interface->pinout[10]).pin,0);
     interface->data = 0;
 }
@@ -132,6 +137,11 @@ void PinChangeMode(GPIO_TypeDef* port, uint16_t pin, char direction){
 
 int OperationEnCours(LCDInterface* interface){
     int etatLCD;
+    if (interface->instruction != READ){
+        interface->instruction = READ;
+        interface->data = 0;
+        LCDSendInstruction(interface);
+    }
     PinChangeMode(LCD_D7_GPIO_Port, LCD_D7_Pin, 0);
     etatLCD = HAL_GPIO_ReadPin(LCD_D7_GPIO_Port, LCD_D7_Pin);
     PinChangeMode(LCD_D7_GPIO_Port, LCD_D7_Pin, 1);

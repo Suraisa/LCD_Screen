@@ -97,9 +97,11 @@ int main(void)
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
   char configLCD[10] = {1,0,1,1,1,1,1,0,0,0};
+  int i;
 
   LCDInit(&interface, configLCD);
   LCDSendText(&interface, "Hello World ! I will");
+  i = OperationEnCours(&interface);
 
   /* USER CODE END 2 */
 
