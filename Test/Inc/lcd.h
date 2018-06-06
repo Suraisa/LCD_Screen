@@ -4,6 +4,7 @@
 #include "stm32f4xx_hal.h"
 #include "main.h"
 
+
 typedef enum lcdInstructionE{
     CLEARDISPLAY = 0x1,
     RETURNHOME = 0x2,
@@ -13,7 +14,6 @@ typedef enum lcdInstructionE{
     FUNCTIONSET = 0x20,
     SETDDRAM = 0x40,
     BUSY = 0x80,
-    READ = 0x100,
     WRITE = 0x200
 }LcdInstruction;
 
@@ -212,9 +212,8 @@ void PinChangeMode(GPIO_TypeDef* port, uint16_t pin, char direction);
 
 
 /*
-Renvoie 1 si l'ecran n'est pas disponible,
-0 sinon
+Wait LCD available
 */
-int OperationEnCours(LCDInterface* interface);
+void WaitLCD(LCDInterface* interface);
 
 #endif
