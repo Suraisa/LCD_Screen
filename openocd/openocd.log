@@ -1,0 +1,83 @@
+Info : Unable to match requested speed 2000 kHz, using 1800 kHz
+Info : Unable to match requested speed 2000 kHz, using 1800 kHz
+Info : clock speed 1800 kHz
+Info : STLINK v2 JTAG v28 API v2 SWIM v17 VID 0x0483 PID 0x374B
+Info : using stlink api v2
+Info : Target voltage: 4.042688
+Info : stm32f4x.cpu: hardware has 6 breakpoints, 4 watchpoints
+Info : accepting 'gdb' connection from pipe
+Info : device id = 0x10016433
+Info : flash size = 512kbytes
+undefined debug reason 7 - target needs reset
+Info : Unable to match requested speed 2000 kHz, using 1800 kHz
+Info : Unable to match requested speed 2000 kHz, using 1800 kHz
+adapter speed: 1800 kHz
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x08001be0 msp: 0x20018000
+Info : halted: PC: 0x080019b2
+Info : halted: PC: 0x080019b6
+Info : halted: PC: 0x080019b8
+Info : halted: PC: 0x080011e0
+Info : halted: PC: 0x080019be
+Info : halted: PC: 0x0800197c
+Info : halted: PC: 0x080019c4
+Info : halted: PC: 0x080019c6
+Info : halted: PC: 0x080019c8
+Info : halted: PC: 0x08001a00
+Info : halted: PC: 0x08001a02
+Info : halted: PC: 0x080019ca
+Info : halted: PC: 0x080019ce
+Info : halted: PC: 0x080019d2
+Info : halted: PC: 0x080019d4
+Info : halted: PC: 0x080019d6
+Info : halted: PC: 0x080019da
+Info : halted: PC: 0x080019ee
+Info : halted: PC: 0x080019f2
+Info : halted: PC: 0x080019f4
+Info : halted: PC: 0x080019f6
+Info : halted: PC: 0x080019fa
+Info : halted: PC: 0x080011e0
+Info : halted: PC: 0x080019b2
+Info : halted: PC: 0x080019b6
+Info : halted: PC: 0x080019b8
+Info : halted: PC: 0x080011e0
+Info : halted: PC: 0x080019be
+Info : halted: PC: 0x0800197c
+Info : halted: PC: 0x080019c4
+Info : halted: PC: 0x080019c6
+Info : halted: PC: 0x080019c8
+Info : halted: PC: 0x08001a00
+Info : halted: PC: 0x08001a02
+Info : halted: PC: 0x080019ca
+Info : halted: PC: 0x080019b2
+Info : halted: PC: 0x080019b2
+Info : halted: PC: 0x080019b2
+Info : halted: PC: 0x080019b2
+Info : halted: PC: 0x080019b2
+Info : halted: PC: 0x080019b2
+Info : halted: PC: 0x080019b2
+Info : halted: PC: 0x080019b2
+Info : halted: PC: 0x080019b2
+Info : halted: PC: 0x080019b2
+Info : halted: PC: 0x080019b2
+Info : halted: PC: 0x080019b2
+Info : halted: PC: 0x080019b2
+Info : halted: PC: 0x080019b2
+Info : halted: PC: 0x080019b2
+Info : halted: PC: 0x080019b2
+Info : halted: PC: 0x080019b2
+Info : halted: PC: 0x080019b2
+Info : halted: PC: 0x080019b2
+Info : halted: PC: 0x080019b2
+Info : halted: PC: 0x080019b2
+Info : halted: PC: 0x080019b2
+Info : halted: PC: 0x080019b2
+Info : halted: PC: 0x080019b2
+Info : halted: PC: 0x080019b2
+Info : halted: PC: 0x080019b2
+Debugger detaching: resuming execution.
+Debugger detaching: resuming execution.
+Warn : target not halted
+
+
+Info : dropped 'gdb' connection
