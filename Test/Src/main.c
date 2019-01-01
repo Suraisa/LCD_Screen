@@ -10,7 +10,7 @@
   * inserted by the user or by software development tools
   * are owned by their respective copyright owners.
   *
-  * COPYRIGHT(c) 2018 STMicroelectronics
+  * COPYRIGHT(c) 2019 STMicroelectronics
   *
   * Redistribution and use in source and binary forms, with or without modification,
   * are permitted provided that the following conditions are met:
@@ -99,7 +99,7 @@ int main(void)
   char configLCD[10] = {1,0,1,1,1,1,1,0,0,0};
 
   LCDInit(&interface, configLCD);
-  LCDSendText(&interface, "Hello World ! I will");
+  // LCDSendText(&interface, "Bonne annee !");
 
   /* USER CODE END 2 */
 
@@ -111,7 +111,8 @@ int main(void)
   /* USER CODE END WHILE */
 
   /* USER CODE BEGIN 3 */
-
+  HAL_GPIO_TogglePin(LD2_GPIO_Port, LD2_Pin);
+  HAL_Delay(1000);
   }
   /* USER CODE END 3 */
 

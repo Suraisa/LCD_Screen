@@ -1,162 +1,250 @@
-ARM GAS  /tmp/ccXyJqFc.s 			page 1
+ARM GAS  /tmp/ccl2tiOX.s 			page 1
 
 
-   1              		.syntax unified
-   2              		.cpu cortex-m4
-   3              		.eabi_attribute 27, 1
-   4              		.eabi_attribute 28, 1
-   5              		.fpu fpv4-sp-d16
-   6              		.eabi_attribute 20, 1
-   7              		.eabi_attribute 21, 1
-   8              		.eabi_attribute 23, 3
-   9              		.eabi_attribute 24, 1
-  10              		.eabi_attribute 25, 1
-  11              		.eabi_attribute 26, 1
-  12              		.eabi_attribute 30, 1
-  13              		.eabi_attribute 34, 1
-  14              		.eabi_attribute 18, 4
-  15              		.thumb
-  16              		.syntax unified
-  17              		.file	"lcd.c"
-  18              		.text
-  19              	.Ltext0:
-  20              		.cfi_sections	.debug_frame
-  21              		.section	.text.LCDInterfaceInitialisation,"ax",%progbits
-  22              		.align	2
-  23              		.global	LCDInterfaceInitialisation
-  24              		.thumb
-  25              		.thumb_func
+   1              		.cpu cortex-m4
+   2              		.eabi_attribute 27, 1
+   3              		.eabi_attribute 28, 1
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 2
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"lcd.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.text.LCDInterfaceInitialisation,"ax",%progbits
+  18              		.align	1
+  19              		.p2align 2,,3
+  20              		.global	LCDInterfaceInitialisation
+  21              		.arch armv7e-m
+  22              		.syntax unified
+  23              		.thumb
+  24              		.thumb_func
+  25              		.fpu fpv4-sp-d16
   27              	LCDInterfaceInitialisation:
-  28              	.LFB124:
-  29              		.file 1 "Src/lcd.c"
+  28              	.LVL0:
+  29              	.LFB126:
+  30              		.file 1 "Src/lcd.c"
    1:Src/lcd.c     **** #include "lcd.h"
    2:Src/lcd.c     **** 
    3:Src/lcd.c     **** 
    4:Src/lcd.c     **** void LCDInterfaceInitialisation(LCDInterface* interface){
-  30              		.loc 1 4 0
-  31              		.cfi_startproc
-  32              		@ args = 0, pretend = 0, frame = 0
-  33              		@ frame_needed = 0, uses_anonymous_args = 0
-  34              		@ link register save eliminated.
-  35              	.LVL0:
-  36 0000 F0B4     		push	{r4, r5, r6, r7}
-  37              	.LCFI0:
-  38              		.cfi_def_cfa_offset 16
-  39              		.cfi_offset 4, -16
-  40              		.cfi_offset 5, -12
-  41              		.cfi_offset 6, -8
-  42              		.cfi_offset 7, -4
+  31              		.loc 1 4 57 view -0
+  32              		.cfi_startproc
+  33              		@ args = 0, pretend = 0, frame = 0
+  34              		@ frame_needed = 0, uses_anonymous_args = 0
+  35              		@ link register save eliminated.
    5:Src/lcd.c     ****     (interface->pinout[0]).port = LCD_D0_GPIO_Port;
-  43              		.loc 1 5 0
-  44 0002 154A     		ldr	r2, .L3
-  45 0004 0260     		str	r2, [r0]
+  36              		.loc 1 5 5 view .LVU1
+   4:Src/lcd.c     ****     (interface->pinout[0]).port = LCD_D0_GPIO_Port;
+  37              		.loc 1 4 57 is_stmt 0 view .LVU2
+  38 0000 30B4     		push	{r4, r5}
+  39              	.LCFI0:
+  40              		.cfi_def_cfa_offset 8
+  41              		.cfi_offset 4, -8
+  42              		.cfi_offset 5, -4
    6:Src/lcd.c     ****     (interface->pinout[0]).pin = LCD_D0_Pin;
-  46              		.loc 1 6 0
-  47 0006 1023     		movs	r3, #16
-  48 0008 8380     		strh	r3, [r0, #4]	@ movhi
+  43              		.loc 1 6 32 view .LVU3
+  44 0002 0421     		movs	r1, #4
    7:Src/lcd.c     ****     (interface->pinout[1]).port = LCD_D1_GPIO_Port;
-  49              		.loc 1 7 0
-  50 000a 8260     		str	r2, [r0, #8]
    8:Src/lcd.c     ****     (interface->pinout[1]).pin = LCD_D1_Pin;
-ARM GAS  /tmp/ccXyJqFc.s 			page 2
-
-
-  51              		.loc 1 8 0
-  52 000c 4FF48061 		mov	r1, #1024
-  53 0010 8181     		strh	r1, [r0, #12]	@ movhi
+  45              		.loc 1 8 32 view .LVU4
+  46 0004 0822     		movs	r2, #8
    9:Src/lcd.c     ****     (interface->pinout[2]).port = LCD_D2_GPIO_Port;
-  54              		.loc 1 9 0
-  55 0012 124B     		ldr	r3, .L3+4
-  56 0014 0361     		str	r3, [r0, #16]
   10:Src/lcd.c     ****     (interface->pinout[2]).pin = LCD_D2_Pin;
-  57              		.loc 1 10 0
-  58 0016 4FF48074 		mov	r4, #256
-  59 001a 8482     		strh	r4, [r0, #20]	@ movhi
+  47              		.loc 1 10 32 view .LVU5
+ARM GAS  /tmp/ccl2tiOX.s 			page 2
+
+
+  48 0006 1023     		movs	r3, #16
   11:Src/lcd.c     ****     (interface->pinout[3]).port = LCD_D3_GPIO_Port;
-  60              		.loc 1 11 0
-  61 001c 8361     		str	r3, [r0, #24]
   12:Src/lcd.c     ****     (interface->pinout[3]).pin = LCD_D3_Pin;
-  62              		.loc 1 12 0
-  63 001e 4FF40074 		mov	r4, #512
-  64 0022 8483     		strh	r4, [r0, #28]	@ movhi
+  49              		.loc 1 12 32 view .LVU6
+  50 0008 2025     		movs	r5, #32
   13:Src/lcd.c     ****     (interface->pinout[4]).port = LCD_D4_GPIO_Port;
-  65              		.loc 1 13 0
-  66 0024 0E4D     		ldr	r5, .L3+8
-  67 0026 0562     		str	r5, [r0, #32]
   14:Src/lcd.c     ****     (interface->pinout[4]).pin = LCD_D4_Pin;
-  68              		.loc 1 14 0
-  69 0028 8027     		movs	r7, #128
-  70 002a 8784     		strh	r7, [r0, #36]	@ movhi
+  51              		.loc 1 14 32 view .LVU7
+  52 000a 4024     		movs	r4, #64
+   6:Src/lcd.c     ****     (interface->pinout[1]).port = LCD_D1_GPIO_Port;
+  53              		.loc 1 6 32 view .LVU8
+  54 000c 8180     		strh	r1, [r0, #4]	@ movhi
+   8:Src/lcd.c     ****     (interface->pinout[2]).port = LCD_D2_GPIO_Port;
+  55              		.loc 1 8 32 view .LVU9
+  56 000e 8281     		strh	r2, [r0, #12]	@ movhi
   15:Src/lcd.c     ****     (interface->pinout[5]).port = LCD_D5_GPIO_Port;
-  71              		.loc 1 15 0
-  72 002c 8262     		str	r2, [r0, #40]
   16:Src/lcd.c     ****     (interface->pinout[5]).pin = LCD_D5_Pin;
-  73              		.loc 1 16 0
-  74 002e 4026     		movs	r6, #64
-  75 0030 8685     		strh	r6, [r0, #44]	@ movhi
+  57              		.loc 1 16 32 view .LVU10
+  58 0010 8021     		movs	r1, #128
   17:Src/lcd.c     ****     (interface->pinout[6]).port = LCD_D6_GPIO_Port;
-  76              		.loc 1 17 0
-  77 0032 0363     		str	r3, [r0, #48]
   18:Src/lcd.c     ****     (interface->pinout[6]).pin = LCD_D6_Pin;
-  78              		.loc 1 18 0
-  79 0034 8786     		strh	r7, [r0, #52]	@ movhi
+  59              		.loc 1 18 32 view .LVU11
+  60 0012 4FF48072 		mov	r2, #256
+  10:Src/lcd.c     ****     (interface->pinout[3]).port = LCD_D3_GPIO_Port;
+  61              		.loc 1 10 32 view .LVU12
+  62 0016 8382     		strh	r3, [r0, #20]	@ movhi
   19:Src/lcd.c     ****     (interface->pinout[7]).port = LCD_D7_GPIO_Port;
-  80              		.loc 1 19 0
-  81 0036 8363     		str	r3, [r0, #56]
   20:Src/lcd.c     ****     (interface->pinout[7]).pin = LCD_D7_Pin;
-  82              		.loc 1 20 0
-  83 0038 8687     		strh	r6, [r0, #60]	@ movhi
+  63              		.loc 1 20 32 view .LVU13
+  64 0018 4FF40073 		mov	r3, #512
+  12:Src/lcd.c     ****     (interface->pinout[4]).port = LCD_D4_GPIO_Port;
+  65              		.loc 1 12 32 view .LVU14
+  66 001c 8583     		strh	r5, [r0, #28]	@ movhi
+  14:Src/lcd.c     ****     (interface->pinout[5]).port = LCD_D5_GPIO_Port;
+  67              		.loc 1 14 32 view .LVU15
+  68 001e 8484     		strh	r4, [r0, #36]	@ movhi
   21:Src/lcd.c     ****     (interface->pinout[8]).port = LCD_RW_GPIO_Port;
-  84              		.loc 1 21 0
-  85 003a 0564     		str	r5, [r0, #64]
   22:Src/lcd.c     ****     (interface->pinout[8]).pin = LCD_RW_Pin;
-  86              		.loc 1 22 0
-  87 003c A0F84440 		strh	r4, [r0, #68]	@ movhi
+  69              		.loc 1 22 32 view .LVU16
+  70 0020 0225     		movs	r5, #2
   23:Src/lcd.c     ****     (interface->pinout[9]).port = LCD_RS_GPIO_Port;
-  88              		.loc 1 23 0
-  89 0040 8364     		str	r3, [r0, #72]
   24:Src/lcd.c     ****     (interface->pinout[9]).pin = LCD_RS_Pin;
-  90              		.loc 1 24 0
-  91 0042 A0F84C10 		strh	r1, [r0, #76]	@ movhi
-ARM GAS  /tmp/ccXyJqFc.s 			page 3
-
-
+  71              		.loc 1 24 32 view .LVU17
+  72 0022 0124     		movs	r4, #1
+  16:Src/lcd.c     ****     (interface->pinout[6]).port = LCD_D6_GPIO_Port;
+  73              		.loc 1 16 32 view .LVU18
+  74 0024 8185     		strh	r1, [r0, #44]	@ movhi
+  18:Src/lcd.c     ****     (interface->pinout[7]).port = LCD_D7_GPIO_Port;
+  75              		.loc 1 18 32 view .LVU19
+  76 0026 8286     		strh	r2, [r0, #52]	@ movhi
   25:Src/lcd.c     ****     (interface->pinout[10]).port = LCD_E_GPIO_Port;
-  92              		.loc 1 25 0
-  93 0046 0265     		str	r2, [r0, #80]
   26:Src/lcd.c     ****     (interface->pinout[10]).pin = LCD_E_Pin;
-  94              		.loc 1 26 0
-  95 0048 2023     		movs	r3, #32
-  96 004a A0F85430 		strh	r3, [r0, #84]	@ movhi
+  77              		.loc 1 26 33 view .LVU20
+  78 0028 4FF40061 		mov	r1, #2048
   27:Src/lcd.c     ****     interface->data = 0;
-  97              		.loc 1 27 0
-  98 004e 0023     		movs	r3, #0
-  99 0050 80F85A30 		strb	r3, [r0, #90]
+  79              		.loc 1 27 21 view .LVU21
+  80 002c 0022     		movs	r2, #0
+ARM GAS  /tmp/ccl2tiOX.s 			page 3
+
+
+  20:Src/lcd.c     ****     (interface->pinout[8]).port = LCD_RW_GPIO_Port;
+  81              		.loc 1 20 32 view .LVU22
+  82 002e 8387     		strh	r3, [r0, #60]	@ movhi
+   5:Src/lcd.c     ****     (interface->pinout[0]).pin = LCD_D0_Pin;
+  83              		.loc 1 5 33 view .LVU23
+  84 0030 0A4B     		ldr	r3, .L4
+  22:Src/lcd.c     ****     (interface->pinout[9]).port = LCD_RS_GPIO_Port;
+  85              		.loc 1 22 32 view .LVU24
+  86 0032 A0F84450 		strh	r5, [r0, #68]	@ movhi
+  24:Src/lcd.c     ****     (interface->pinout[10]).port = LCD_E_GPIO_Port;
+  87              		.loc 1 24 32 view .LVU25
+  88 0036 A0F84C40 		strh	r4, [r0, #76]	@ movhi
+  26:Src/lcd.c     ****     interface->data = 0;
+  89              		.loc 1 26 33 view .LVU26
+  90 003a A0F85410 		strh	r1, [r0, #84]	@ movhi
+  91              		.loc 1 27 21 view .LVU27
+  92 003e 80F85A20 		strb	r2, [r0, #90]
+   5:Src/lcd.c     ****     (interface->pinout[0]).pin = LCD_D0_Pin;
+  93              		.loc 1 5 33 view .LVU28
+  94 0042 0360     		str	r3, [r0]
+   6:Src/lcd.c     ****     (interface->pinout[1]).port = LCD_D1_GPIO_Port;
+  95              		.loc 1 6 5 is_stmt 1 view .LVU29
+   7:Src/lcd.c     ****     (interface->pinout[1]).pin = LCD_D1_Pin;
+  96              		.loc 1 7 5 view .LVU30
+   7:Src/lcd.c     ****     (interface->pinout[1]).pin = LCD_D1_Pin;
+  97              		.loc 1 7 33 is_stmt 0 view .LVU31
+  98 0044 8360     		str	r3, [r0, #8]
+   8:Src/lcd.c     ****     (interface->pinout[2]).port = LCD_D2_GPIO_Port;
+  99              		.loc 1 8 5 is_stmt 1 view .LVU32
+   9:Src/lcd.c     ****     (interface->pinout[2]).pin = LCD_D2_Pin;
+ 100              		.loc 1 9 5 view .LVU33
+   9:Src/lcd.c     ****     (interface->pinout[2]).pin = LCD_D2_Pin;
+ 101              		.loc 1 9 33 is_stmt 0 view .LVU34
+ 102 0046 0361     		str	r3, [r0, #16]
+  10:Src/lcd.c     ****     (interface->pinout[3]).port = LCD_D3_GPIO_Port;
+ 103              		.loc 1 10 5 is_stmt 1 view .LVU35
+  11:Src/lcd.c     ****     (interface->pinout[3]).pin = LCD_D3_Pin;
+ 104              		.loc 1 11 5 view .LVU36
+  11:Src/lcd.c     ****     (interface->pinout[3]).pin = LCD_D3_Pin;
+ 105              		.loc 1 11 33 is_stmt 0 view .LVU37
+ 106 0048 8361     		str	r3, [r0, #24]
+  12:Src/lcd.c     ****     (interface->pinout[4]).port = LCD_D4_GPIO_Port;
+ 107              		.loc 1 12 5 is_stmt 1 view .LVU38
+  13:Src/lcd.c     ****     (interface->pinout[4]).pin = LCD_D4_Pin;
+ 108              		.loc 1 13 5 view .LVU39
+  13:Src/lcd.c     ****     (interface->pinout[4]).pin = LCD_D4_Pin;
+ 109              		.loc 1 13 33 is_stmt 0 view .LVU40
+ 110 004a 0362     		str	r3, [r0, #32]
+  14:Src/lcd.c     ****     (interface->pinout[5]).port = LCD_D5_GPIO_Port;
+ 111              		.loc 1 14 5 is_stmt 1 view .LVU41
+  15:Src/lcd.c     ****     (interface->pinout[5]).pin = LCD_D5_Pin;
+ 112              		.loc 1 15 5 view .LVU42
+  15:Src/lcd.c     ****     (interface->pinout[5]).pin = LCD_D5_Pin;
+ 113              		.loc 1 15 33 is_stmt 0 view .LVU43
+ 114 004c 8362     		str	r3, [r0, #40]
+  16:Src/lcd.c     ****     (interface->pinout[6]).port = LCD_D6_GPIO_Port;
+ 115              		.loc 1 16 5 is_stmt 1 view .LVU44
+ARM GAS  /tmp/ccl2tiOX.s 			page 4
+
+
+  17:Src/lcd.c     ****     (interface->pinout[6]).pin = LCD_D6_Pin;
+ 116              		.loc 1 17 5 view .LVU45
+  17:Src/lcd.c     ****     (interface->pinout[6]).pin = LCD_D6_Pin;
+ 117              		.loc 1 17 33 is_stmt 0 view .LVU46
+ 118 004e 0363     		str	r3, [r0, #48]
+  18:Src/lcd.c     ****     (interface->pinout[7]).port = LCD_D7_GPIO_Port;
+ 119              		.loc 1 18 5 is_stmt 1 view .LVU47
+  19:Src/lcd.c     ****     (interface->pinout[7]).pin = LCD_D7_Pin;
+ 120              		.loc 1 19 5 view .LVU48
+  19:Src/lcd.c     ****     (interface->pinout[7]).pin = LCD_D7_Pin;
+ 121              		.loc 1 19 33 is_stmt 0 view .LVU49
+ 122 0050 8363     		str	r3, [r0, #56]
+  20:Src/lcd.c     ****     (interface->pinout[8]).port = LCD_RW_GPIO_Port;
+ 123              		.loc 1 20 5 is_stmt 1 view .LVU50
+  21:Src/lcd.c     ****     (interface->pinout[8]).pin = LCD_RW_Pin;
+ 124              		.loc 1 21 5 view .LVU51
+  21:Src/lcd.c     ****     (interface->pinout[8]).pin = LCD_RW_Pin;
+ 125              		.loc 1 21 33 is_stmt 0 view .LVU52
+ 126 0052 0364     		str	r3, [r0, #64]
+  22:Src/lcd.c     ****     (interface->pinout[9]).port = LCD_RS_GPIO_Port;
+ 127              		.loc 1 22 5 is_stmt 1 view .LVU53
+  23:Src/lcd.c     ****     (interface->pinout[9]).pin = LCD_RS_Pin;
+ 128              		.loc 1 23 5 view .LVU54
+  23:Src/lcd.c     ****     (interface->pinout[9]).pin = LCD_RS_Pin;
+ 129              		.loc 1 23 33 is_stmt 0 view .LVU55
+ 130 0054 8364     		str	r3, [r0, #72]
+  24:Src/lcd.c     ****     (interface->pinout[10]).port = LCD_E_GPIO_Port;
+ 131              		.loc 1 24 5 is_stmt 1 view .LVU56
+  25:Src/lcd.c     ****     (interface->pinout[10]).pin = LCD_E_Pin;
+ 132              		.loc 1 25 5 view .LVU57
+  25:Src/lcd.c     ****     (interface->pinout[10]).pin = LCD_E_Pin;
+ 133              		.loc 1 25 34 is_stmt 0 view .LVU58
+ 134 0056 0365     		str	r3, [r0, #80]
+  26:Src/lcd.c     ****     interface->data = 0;
+ 135              		.loc 1 26 5 is_stmt 1 view .LVU59
+ 136              		.loc 1 27 5 view .LVU60
   28:Src/lcd.c     **** }
- 100              		.loc 1 28 0
- 101 0054 F0BC     		pop	{r4, r5, r6, r7}
- 102              	.LCFI1:
- 103              		.cfi_restore 7
- 104              		.cfi_restore 6
- 105              		.cfi_restore 5
- 106              		.cfi_restore 4
- 107              		.cfi_def_cfa_offset 0
- 108 0056 7047     		bx	lr
- 109              	.L4:
- 110              		.align	2
- 111              	.L3:
- 112 0058 00040240 		.word	1073873920
- 113 005c 00000240 		.word	1073872896
- 114 0060 00080240 		.word	1073874944
- 115              		.cfi_endproc
- 116              	.LFE124:
- 118              		.section	.text.PinChangeMode,"ax",%progbits
- 119              		.align	2
- 120              		.global	PinChangeMode
- 121              		.thumb
- 122              		.thumb_func
- 124              	PinChangeMode:
- 125              	.LFB136:
+ 137              		.loc 1 28 1 is_stmt 0 view .LVU61
+ 138 0058 30BC     		pop	{r4, r5}
+ 139              	.LCFI1:
+ 140              		.cfi_restore 5
+ 141              		.cfi_restore 4
+ 142              		.cfi_def_cfa_offset 0
+ 143 005a 7047     		bx	lr
+ 144              	.L5:
+ 145              		.align	2
+ 146              	.L4:
+ 147 005c 00080240 		.word	1073874944
+ 148              		.cfi_endproc
+ 149              	.LFE126:
+ 151              		.section	.text.LCDSendInstruction,"ax",%progbits
+ 152              		.align	1
+ 153              		.p2align 2,,3
+ 154              		.global	LCDSendInstruction
+ 155              		.syntax unified
+ 156              		.thumb
+ 157              		.thumb_func
+ARM GAS  /tmp/ccl2tiOX.s 			page 5
+
+
+ 158              		.fpu fpv4-sp-d16
+ 160              	LCDSendInstruction:
+ 161              	.LVL1:
+ 162              	.LFB129:
   29:Src/lcd.c     **** 
   30:Src/lcd.c     **** void LCDSendChar(LCDInterface* interface, char c){
   31:Src/lcd.c     ****     interface->data = c;
@@ -173,14 +261,34 @@ ARM GAS  /tmp/ccXyJqFc.s 			page 1
   42:Src/lcd.c     **** }
   43:Src/lcd.c     **** 
   44:Src/lcd.c     **** void LCDSendInstruction(LCDInterface* interface){
+ 163              		.loc 1 44 49 is_stmt 1 view -0
+ 164              		.cfi_startproc
+ 165              		@ args = 0, pretend = 0, frame = 0
+ 166              		@ frame_needed = 0, uses_anonymous_args = 0
   45:Src/lcd.c     ****     int i;
+ 167              		.loc 1 45 5 view .LVU63
   46:Src/lcd.c     ****     WaitLCD(interface);
+ 168              		.loc 1 46 5 view .LVU64
+  44:Src/lcd.c     ****     int i;
+ 169              		.loc 1 44 49 is_stmt 0 view .LVU65
+ 170 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
+ 171              	.LCFI2:
+ 172              		.cfi_def_cfa_offset 24
+ 173              		.cfi_offset 3, -24
+ 174              		.cfi_offset 4, -20
+ 175              		.cfi_offset 5, -16
+ 176              		.cfi_offset 6, -12
+ 177              		.cfi_offset 7, -8
+ 178              		.cfi_offset 14, -4
+  44:Src/lcd.c     ****     int i;
+ 179              		.loc 1 44 49 view .LVU66
+ 180 0002 0546     		mov	r5, r0
+ 181              	.LVL2:
+ 182              	.LBB22:
+ 183              	.LBI22:
   47:Src/lcd.c     ****     HAL_GPIO_WritePin((interface->pinout[10]).port,(interface->pinout[10]).pin,1);
   48:Src/lcd.c     ****     for (i=0; i<10; i++){
   49:Src/lcd.c     ****         if (1<<i & (interface->instruction | interface->data)){
-ARM GAS  /tmp/ccXyJqFc.s 			page 4
-
-
   50:Src/lcd.c     ****             HAL_GPIO_WritePin((interface->pinout[i]).port,(interface->pinout[i]).pin,1);
   51:Src/lcd.c     ****         }
   52:Src/lcd.c     ****         else{
@@ -190,6 +298,9 @@ ARM GAS  /tmp/ccXyJqFc.s 			page 1
   56:Src/lcd.c     ****     HAL_GPIO_WritePin((interface->pinout[10]).port,(interface->pinout[10]).pin,0);
   57:Src/lcd.c     ****     interface->data = 0;
   58:Src/lcd.c     **** }
+ARM GAS  /tmp/ccl2tiOX.s 			page 6
+
+
   59:Src/lcd.c     **** 
   60:Src/lcd.c     **** void InstructionFunctionSet(LCDInterface* interface, char config[10]){
   61:Src/lcd.c     ****     interface->instruction = FUNCTIONSET;
@@ -238,9 +349,6 @@ ARM GAS  /tmp/ccXyJqFc.s 			page 1
  104:Src/lcd.c     ****     HAL_Delay(1);
  105:Src/lcd.c     ****     InstructionDisplay(interface, config);
  106:Src/lcd.c     ****     HAL_Delay(1);
-ARM GAS  /tmp/ccXyJqFc.s 			page 5
-
-
  107:Src/lcd.c     ****     InstructionClearDisplay(interface);
  108:Src/lcd.c     ****     HAL_Delay(1);
  109:Src/lcd.c     ****     InstructionReturnHome(interface);
@@ -250,888 +358,1660 @@ ARM GAS  /tmp/ccXyJqFc.s 			page 1
  113:Src/lcd.c     ****     interface->instruction = SETDDRAM;
  114:Src/lcd.c     ****     interface->data = ddram;
  115:Src/lcd.c     ****     LCDSendInstruction(interface);
+ARM GAS  /tmp/ccl2tiOX.s 			page 7
+
+
  116:Src/lcd.c     **** }
  117:Src/lcd.c     **** 
  118:Src/lcd.c     **** void PinChangeMode(GPIO_TypeDef* port, uint16_t pin, char direction){
- 126              		.loc 1 118 0
- 127              		.cfi_startproc
- 128              		@ args = 0, pretend = 0, frame = 24
- 129              		@ frame_needed = 0, uses_anonymous_args = 0
- 130              	.LVL1:
- 131 0000 30B5     		push	{r4, r5, lr}
- 132              	.LCFI2:
- 133              		.cfi_def_cfa_offset 12
- 134              		.cfi_offset 4, -12
- 135              		.cfi_offset 5, -8
- 136              		.cfi_offset 14, -4
- 137 0002 87B0     		sub	sp, sp, #28
- 138              	.LCFI3:
- 139              		.cfi_def_cfa_offset 40
- 140 0004 0546     		mov	r5, r0
  119:Src/lcd.c     ****     GPIO_InitTypeDef GPIO_InitStruct;
  120:Src/lcd.c     ****     if(direction){
- 141              		.loc 1 120 0
- 142 0006 12B1     		cbz	r2, .L6
  121:Src/lcd.c     ****         GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
- 143              		.loc 1 121 0
- 144 0008 0123     		movs	r3, #1
- 145 000a 0293     		str	r3, [sp, #8]
- 146 000c 01E0     		b	.L7
- 147              	.L6:
  122:Src/lcd.c     ****     }
  123:Src/lcd.c     ****     else{
  124:Src/lcd.c     ****         GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
- 148              		.loc 1 124 0
- 149 000e 0023     		movs	r3, #0
- 150 0010 0293     		str	r3, [sp, #8]
- 151              	.L7:
  125:Src/lcd.c     ****     }
  126:Src/lcd.c     ****     GPIO_InitStruct.Pull = GPIO_NOPULL;
- 152              		.loc 1 126 0
- 153 0012 0023     		movs	r3, #0
- 154 0014 0393     		str	r3, [sp, #12]
  127:Src/lcd.c     ****     GPIO_InitStruct.Pin = pin;
- 155              		.loc 1 127 0
- 156 0016 06AC     		add	r4, sp, #24
- 157 0018 44F8141D 		str	r1, [r4, #-20]!
  128:Src/lcd.c     ****     HAL_GPIO_DeInit(port, pin);
- 158              		.loc 1 128 0
- 159 001c 2846     		mov	r0, r5
- 160              	.LVL2:
-ARM GAS  /tmp/ccXyJqFc.s 			page 6
-
-
- 161 001e FFF7FEFF 		bl	HAL_GPIO_DeInit
- 162              	.LVL3:
  129:Src/lcd.c     ****     HAL_GPIO_Init(port, &GPIO_InitStruct);
- 163              		.loc 1 129 0
- 164 0022 2146     		mov	r1, r4
- 165 0024 2846     		mov	r0, r5
- 166 0026 FFF7FEFF 		bl	HAL_GPIO_Init
- 167              	.LVL4:
  130:Src/lcd.c     **** }
- 168              		.loc 1 130 0
- 169 002a 07B0     		add	sp, sp, #28
- 170              	.LCFI4:
- 171              		.cfi_def_cfa_offset 12
- 172              		@ sp needed
- 173 002c 30BD     		pop	{r4, r5, pc}
- 174              		.cfi_endproc
- 175              	.LFE136:
- 177 002e 00BF     		.section	.text.WaitLCD,"ax",%progbits
- 178              		.align	2
- 179              		.global	WaitLCD
- 180              		.thumb
- 181              		.thumb_func
- 183              	WaitLCD:
- 184              	.LFB137:
  131:Src/lcd.c     **** 
  132:Src/lcd.c     **** 
  133:Src/lcd.c     **** void WaitLCD(LCDInterface* interface){    
- 185              		.loc 1 133 0
- 186              		.cfi_startproc
- 187              		@ args = 0, pretend = 0, frame = 0
- 188              		@ frame_needed = 0, uses_anonymous_args = 0
- 189              	.LVL5:
- 190 0000 10B5     		push	{r4, lr}
- 191              	.LCFI5:
- 192              		.cfi_def_cfa_offset 8
- 193              		.cfi_offset 4, -8
- 194              		.cfi_offset 14, -4
- 195 0002 0446     		mov	r4, r0
+ 184              		.loc 1 133 6 is_stmt 1 view .LVU67
+ 185              	.LBB23:
  134:Src/lcd.c     ****     HAL_GPIO_WritePin(interface->pinout[8].port,interface->pinout[8].pin,1);
- 196              		.loc 1 134 0
- 197 0004 0122     		movs	r2, #1
- 198 0006 B0F84410 		ldrh	r1, [r0, #68]
- 199 000a 006C     		ldr	r0, [r0, #64]
- 200              	.LVL6:
- 201 000c FFF7FEFF 		bl	HAL_GPIO_WritePin
- 202              	.LVL7:
+ 186              		.loc 1 134 5 view .LVU68
+ 187 0004 B0F84410 		ldrh	r1, [r0, #68]
+ 188 0008 006C     		ldr	r0, [r0, #64]
+ 189              	.LVL3:
+ 190              		.loc 1 134 5 is_stmt 0 view .LVU69
+ 191 000a 0122     		movs	r2, #1
+ 192 000c FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 193              	.LVL4:
  135:Src/lcd.c     ****     HAL_GPIO_WritePin(interface->pinout[9].port,interface->pinout[9].pin,0);
- 203              		.loc 1 135 0
- 204 0010 0022     		movs	r2, #0
- 205 0012 B4F84C10 		ldrh	r1, [r4, #76]
- 206 0016 A06C     		ldr	r0, [r4, #72]
- 207 0018 FFF7FEFF 		bl	HAL_GPIO_WritePin
- 208              	.LVL8:
- 136:Src/lcd.c     ****     
- 137:Src/lcd.c     ****     PinChangeMode(LCD_D7_GPIO_Port, LCD_D7_Pin, 0);
- 209              		.loc 1 137 0
- 210 001c 0022     		movs	r2, #0
-ARM GAS  /tmp/ccXyJqFc.s 			page 7
-
-
- 211 001e 4021     		movs	r1, #64
- 212 0020 0D48     		ldr	r0, .L12
- 213 0022 FFF7FEFF 		bl	PinChangeMode
- 214              	.LVL9:
- 138:Src/lcd.c     ****     HAL_GPIO_WritePin(interface->pinout[10].port,interface->pinout[10].pin,1);
- 215              		.loc 1 138 0
- 216 0026 0122     		movs	r2, #1
- 217 0028 B4F85410 		ldrh	r1, [r4, #84]
- 218 002c 206D     		ldr	r0, [r4, #80]
- 219 002e FFF7FEFF 		bl	HAL_GPIO_WritePin
- 220              	.LVL10:
- 221              	.L10:
- 139:Src/lcd.c     ****     while(HAL_GPIO_ReadPin(interface->pinout[7].port,interface->pinout[7].pin)){
- 222              		.loc 1 139 0 discriminator 1
- 223 0032 A18F     		ldrh	r1, [r4, #60]
- 224 0034 A06B     		ldr	r0, [r4, #56]
- 225 0036 FFF7FEFF 		bl	HAL_GPIO_ReadPin
- 226              	.LVL11:
- 227 003a 0028     		cmp	r0, #0
- 228 003c F9D1     		bne	.L10
- 140:Src/lcd.c     ****     }
- 141:Src/lcd.c     ****     HAL_GPIO_WritePin(interface->pinout[10].port,interface->pinout[10].pin,0);
- 229              		.loc 1 141 0
- 230 003e 0022     		movs	r2, #0
- 231 0040 B4F85410 		ldrh	r1, [r4, #84]
- 232 0044 206D     		ldr	r0, [r4, #80]
- 233 0046 FFF7FEFF 		bl	HAL_GPIO_WritePin
- 234              	.LVL12:
- 142:Src/lcd.c     **** 
- 143:Src/lcd.c     ****     PinChangeMode(LCD_D7_GPIO_Port, LCD_D7_Pin, 1);
- 235              		.loc 1 143 0
- 236 004a 0122     		movs	r2, #1
- 237 004c 4021     		movs	r1, #64
- 238 004e 0248     		ldr	r0, .L12
- 239 0050 FFF7FEFF 		bl	PinChangeMode
- 240              	.LVL13:
- 241 0054 10BD     		pop	{r4, pc}
- 242              	.LVL14:
- 243              	.L13:
- 244 0056 00BF     		.align	2
- 245              	.L12:
- 246 0058 00000240 		.word	1073872896
- 247              		.cfi_endproc
- 248              	.LFE137:
- 250              		.section	.text.LCDSendInstruction,"ax",%progbits
- 251              		.align	2
- 252              		.global	LCDSendInstruction
- 253              		.thumb
- 254              		.thumb_func
- 256              	LCDSendInstruction:
- 257              	.LFB127:
-  44:Src/lcd.c     ****     int i;
- 258              		.loc 1 44 0
- 259              		.cfi_startproc
- 260              		@ args = 0, pretend = 0, frame = 0
- 261              		@ frame_needed = 0, uses_anonymous_args = 0
- 262              	.LVL15:
-ARM GAS  /tmp/ccXyJqFc.s 			page 8
-
-
- 263 0000 38B5     		push	{r3, r4, r5, lr}
- 264              	.LCFI6:
- 265              		.cfi_def_cfa_offset 16
- 266              		.cfi_offset 3, -16
- 267              		.cfi_offset 4, -12
- 268              		.cfi_offset 5, -8
- 269              		.cfi_offset 14, -4
- 270 0002 0546     		mov	r5, r0
-  46:Src/lcd.c     ****     HAL_GPIO_WritePin((interface->pinout[10]).port,(interface->pinout[10]).pin,1);
- 271              		.loc 1 46 0
- 272 0004 FFF7FEFF 		bl	WaitLCD
- 273              	.LVL16:
+ 194              		.loc 1 135 5 is_stmt 1 view .LVU70
+ 195 0010 B5F84C10 		ldrh	r1, [r5, #76]
+ 196 0014 A86C     		ldr	r0, [r5, #72]
+ 197 0016 0022     		movs	r2, #0
+ 198 0018 FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 199              	.LVL5:
+ 136:Src/lcd.c     ****     HAL_Delay(10);
+ 200              		.loc 1 136 5 view .LVU71
+ 201 001c 0A20     		movs	r0, #10
+ 202 001e FFF7FEFF 		bl	HAL_Delay
+ 203              	.LVL6:
+ 204              		.loc 1 136 5 is_stmt 0 view .LVU72
+ 205              	.LBE23:
+ 206              	.LBE22:
   47:Src/lcd.c     ****     for (i=0; i<10; i++){
- 274              		.loc 1 47 0
- 275 0008 0122     		movs	r2, #1
- 276 000a B5F85410 		ldrh	r1, [r5, #84]
- 277 000e 286D     		ldr	r0, [r5, #80]
- 278 0010 FFF7FEFF 		bl	HAL_GPIO_WritePin
- 279              	.LVL17:
+ 207              		.loc 1 47 5 is_stmt 1 view .LVU73
+ 208 0022 B5F85410 		ldrh	r1, [r5, #84]
+ 209 0026 286D     		ldr	r0, [r5, #80]
+ 210 0028 0122     		movs	r2, #1
+ 211 002a FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 212              	.LVL7:
   48:Src/lcd.c     ****         if (1<<i & (interface->instruction | interface->data)){
- 280              		.loc 1 48 0
- 281 0014 0024     		movs	r4, #0
- 282 0016 1AE0     		b	.L15
- 283              	.LVL18:
- 284              	.L18:
+ 213              		.loc 1 48 5 view .LVU74
+  48:Src/lcd.c     ****         if (1<<i & (interface->instruction | interface->data)){
+ 214              		.loc 1 48 5 is_stmt 0 view .LVU75
+ 215 002e 2F1D     		adds	r7, r5, #4
+  48:Src/lcd.c     ****         if (1<<i & (interface->instruction | interface->data)){
+ARM GAS  /tmp/ccl2tiOX.s 			page 8
+
+
+ 216              		.loc 1 48 11 view .LVU76
+ 217 0030 0024     		movs	r4, #0
+ 218              	.LVL8:
+ 219              	.L9:
   49:Src/lcd.c     ****             HAL_GPIO_WritePin((interface->pinout[i]).port,(interface->pinout[i]).pin,1);
- 285              		.loc 1 49 0
- 286 0018 B5F85820 		ldrh	r2, [r5, #88]
- 287 001c 95F85A30 		ldrb	r3, [r5, #90]	@ zero_extendqisi2
- 288 0020 1343     		orrs	r3, r3, r2
- 289 0022 2341     		asrs	r3, r3, r4
- 290 0024 13F0010F 		tst	r3, #1
- 291 0028 08D0     		beq	.L16
+ 220              		.loc 1 49 9 is_stmt 1 view .LVU77
   50:Src/lcd.c     ****         }
- 292              		.loc 1 50 0
- 293 002a 05EBC403 		add	r3, r5, r4, lsl #3
- 294 002e 0122     		movs	r2, #1
- 295 0030 9988     		ldrh	r1, [r3, #4]
- 296 0032 55F83400 		ldr	r0, [r5, r4, lsl #3]
- 297 0036 FFF7FEFF 		bl	HAL_GPIO_WritePin
- 298              	.LVL19:
- 299 003a 07E0     		b	.L17
- 300              	.L16:
+ 221              		.loc 1 50 13 view .LVU78
   53:Src/lcd.c     ****         }
- 301              		.loc 1 53 0
- 302 003c 05EBC403 		add	r3, r5, r4, lsl #3
- 303 0040 0022     		movs	r2, #0
- 304 0042 9988     		ldrh	r1, [r3, #4]
- 305 0044 55F83400 		ldr	r0, [r5, r4, lsl #3]
- 306 0048 FFF7FEFF 		bl	HAL_GPIO_WritePin
- 307              	.LVL20:
- 308              	.L17:
+ 222              		.loc 1 53 13 view .LVU79
+  49:Src/lcd.c     ****             HAL_GPIO_WritePin((interface->pinout[i]).port,(interface->pinout[i]).pin,1);
+ 223              		.loc 1 49 55 is_stmt 0 view .LVU80
+ 224 0032 95F85A30 		ldrb	r3, [r5, #90]	@ zero_extendqisi2
+  49:Src/lcd.c     ****             HAL_GPIO_WritePin((interface->pinout[i]).port,(interface->pinout[i]).pin,1);
+ 225              		.loc 1 49 30 view .LVU81
+ 226 0036 B5F85820 		ldrh	r2, [r5, #88]
+ 227 003a 55F83460 		ldr	r6, [r5, r4, lsl #3]
+ 228 003e 37F834C0 		ldrh	ip, [r7, r4, lsl #3]
+  49:Src/lcd.c     ****             HAL_GPIO_WritePin((interface->pinout[i]).port,(interface->pinout[i]).pin,1);
+ 229              		.loc 1 49 44 view .LVU82
+ 230 0042 1A43     		orrs	r2, r2, r3
+  49:Src/lcd.c     ****             HAL_GPIO_WritePin((interface->pinout[i]).port,(interface->pinout[i]).pin,1);
+ 231              		.loc 1 49 13 view .LVU83
+ 232 0044 2241     		asrs	r2, r2, r4
+  49:Src/lcd.c     ****             HAL_GPIO_WritePin((interface->pinout[i]).port,(interface->pinout[i]).pin,1);
+ 233              		.loc 1 49 12 view .LVU84
+ 234 0046 12F00103 		ands	r3, r2, #1
+  50:Src/lcd.c     ****         }
+ 235              		.loc 1 50 13 view .LVU85
+ 236 004a 6146     		mov	r1, ip
+ 237 004c 4FF00102 		mov	r2, #1
+ 238 0050 3046     		mov	r0, r6
+  53:Src/lcd.c     ****         }
+ 239              		.loc 1 53 13 view .LVU86
+ 240 0052 02BF     		ittt	eq
+ 241 0054 1A46     		moveq	r2, r3
+ 242 0056 6146     		moveq	r1, ip
+ 243 0058 3046     		moveq	r0, r6
   48:Src/lcd.c     ****         if (1<<i & (interface->instruction | interface->data)){
- 309              		.loc 1 48 0 discriminator 2
- 310 004c 0134     		adds	r4, r4, #1
- 311              	.LVL21:
- 312              	.L15:
-ARM GAS  /tmp/ccXyJqFc.s 			page 9
-
-
+ 244              		.loc 1 48 22 view .LVU87
+ 245 005a 0134     		adds	r4, r4, #1
+ 246              	.LVL9:
+  53:Src/lcd.c     ****         }
+ 247              		.loc 1 53 13 view .LVU88
+ 248 005c FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 249              	.LVL10:
   48:Src/lcd.c     ****         if (1<<i & (interface->instruction | interface->data)){
- 313              		.loc 1 48 0 is_stmt 0 discriminator 1
- 314 004e 092C     		cmp	r4, #9
- 315 0050 E2DD     		ble	.L18
+ 250              		.loc 1 48 5 view .LVU89
+ 251 0060 0A2C     		cmp	r4, #10
+ 252 0062 E6D1     		bne	.L9
   56:Src/lcd.c     ****     interface->data = 0;
- 316              		.loc 1 56 0 is_stmt 1
- 317 0052 0022     		movs	r2, #0
- 318 0054 B5F85410 		ldrh	r1, [r5, #84]
- 319 0058 286D     		ldr	r0, [r5, #80]
- 320 005a FFF7FEFF 		bl	HAL_GPIO_WritePin
- 321              	.LVL22:
+ 253              		.loc 1 56 5 is_stmt 1 view .LVU90
+ 254 0064 0022     		movs	r2, #0
+ 255 0066 B5F85410 		ldrh	r1, [r5, #84]
+ 256 006a 286D     		ldr	r0, [r5, #80]
+ 257 006c FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 258              	.LVL11:
+ARM GAS  /tmp/ccl2tiOX.s 			page 9
+
+
   57:Src/lcd.c     **** }
- 322              		.loc 1 57 0
- 323 005e 0023     		movs	r3, #0
- 324 0060 85F85A30 		strb	r3, [r5, #90]
- 325 0064 38BD     		pop	{r3, r4, r5, pc}
- 326              		.cfi_endproc
- 327              	.LFE127:
- 329 0066 00BF     		.section	.text.LCDSendChar,"ax",%progbits
- 330              		.align	2
- 331              		.global	LCDSendChar
- 332              		.thumb
- 333              		.thumb_func
- 335              	LCDSendChar:
- 336              	.LFB125:
+ 259              		.loc 1 57 5 view .LVU91
+  57:Src/lcd.c     **** }
+ 260              		.loc 1 57 21 is_stmt 0 view .LVU92
+ 261 0070 0023     		movs	r3, #0
+ 262 0072 85F85A30 		strb	r3, [r5, #90]
+  58:Src/lcd.c     **** 
+ 263              		.loc 1 58 1 view .LVU93
+ 264 0076 F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+  58:Src/lcd.c     **** 
+ 265              		.loc 1 58 1 view .LVU94
+ 266              		.cfi_endproc
+ 267              	.LFE129:
+ 269              		.section	.text.LCDSendChar,"ax",%progbits
+ 270              		.align	1
+ 271              		.p2align 2,,3
+ 272              		.global	LCDSendChar
+ 273              		.syntax unified
+ 274              		.thumb
+ 275              		.thumb_func
+ 276              		.fpu fpv4-sp-d16
+ 278              	LCDSendChar:
+ 279              	.LVL12:
+ 280              	.LFB127:
   30:Src/lcd.c     ****     interface->data = c;
- 337              		.loc 1 30 0
- 338              		.cfi_startproc
- 339              		@ args = 0, pretend = 0, frame = 0
- 340              		@ frame_needed = 0, uses_anonymous_args = 0
- 341              	.LVL23:
- 342 0000 08B5     		push	{r3, lr}
- 343              	.LCFI7:
- 344              		.cfi_def_cfa_offset 8
- 345              		.cfi_offset 3, -8
- 346              		.cfi_offset 14, -4
+ 281              		.loc 1 30 50 is_stmt 1 view -0
+ 282              		.cfi_startproc
+ 283              		@ args = 0, pretend = 0, frame = 0
+ 284              		@ frame_needed = 0, uses_anonymous_args = 0
+ 285              		@ link register save eliminated.
   31:Src/lcd.c     ****     interface->instruction = WRITE;
- 347              		.loc 1 31 0
- 348 0002 80F85A10 		strb	r1, [r0, #90]
+ 286              		.loc 1 31 5 view .LVU96
   32:Src/lcd.c     ****     LCDSendInstruction(interface);
- 349              		.loc 1 32 0
- 350 0006 4FF40072 		mov	r2, #512
- 351 000a A0F85820 		strh	r2, [r0, #88]	@ movhi
+ 287              		.loc 1 32 28 is_stmt 0 view .LVU97
+ 288 0000 4FF40072 		mov	r2, #512
+  31:Src/lcd.c     ****     interface->instruction = WRITE;
+ 289              		.loc 1 31 21 view .LVU98
+ 290 0004 80F85A10 		strb	r1, [r0, #90]
+  32:Src/lcd.c     ****     LCDSendInstruction(interface);
+ 291              		.loc 1 32 5 is_stmt 1 view .LVU99
+  32:Src/lcd.c     ****     LCDSendInstruction(interface);
+ 292              		.loc 1 32 28 is_stmt 0 view .LVU100
+ 293 0008 A0F85820 		strh	r2, [r0, #88]	@ movhi
   33:Src/lcd.c     **** }
- 352              		.loc 1 33 0
- 353 000e FFF7FEFF 		bl	LCDSendInstruction
- 354              	.LVL24:
- 355 0012 08BD     		pop	{r3, pc}
- 356              		.cfi_endproc
- 357              	.LFE125:
- 359              		.section	.text.LCDSendText,"ax",%progbits
- 360              		.align	2
- 361              		.global	LCDSendText
- 362              		.thumb
- 363              		.thumb_func
- 365              	LCDSendText:
- 366              	.LFB126:
-ARM GAS  /tmp/ccXyJqFc.s 			page 10
+ 294              		.loc 1 33 5 is_stmt 1 view .LVU101
+ 295 000c FFF7FEBF 		b	LCDSendInstruction
+ 296              	.LVL13:
+  33:Src/lcd.c     **** }
+ 297              		.loc 1 33 5 is_stmt 0 view .LVU102
+ 298              		.cfi_endproc
+ 299              	.LFE127:
+ 301              		.section	.text.LCDSendText,"ax",%progbits
+ 302              		.align	1
+ 303              		.p2align 2,,3
+ 304              		.global	LCDSendText
+ 305              		.syntax unified
+ 306              		.thumb
+ARM GAS  /tmp/ccl2tiOX.s 			page 10
 
 
+ 307              		.thumb_func
+ 308              		.fpu fpv4-sp-d16
+ 310              	LCDSendText:
+ 311              	.LVL14:
+ 312              	.LFB128:
   36:Src/lcd.c     ****     char *c = data;
- 367              		.loc 1 36 0
- 368              		.cfi_startproc
- 369              		@ args = 0, pretend = 0, frame = 0
- 370              		@ frame_needed = 0, uses_anonymous_args = 0
- 371              	.LVL25:
- 372 0000 38B5     		push	{r3, r4, r5, lr}
- 373              	.LCFI8:
- 374              		.cfi_def_cfa_offset 16
- 375              		.cfi_offset 3, -16
- 376              		.cfi_offset 4, -12
- 377              		.cfi_offset 5, -8
- 378              		.cfi_offset 14, -4
- 379 0002 0546     		mov	r5, r0
- 380 0004 0C46     		mov	r4, r1
- 381              	.LVL26:
+ 313              		.loc 1 36 54 is_stmt 1 view -0
+ 314              		.cfi_startproc
+ 315              		@ args = 0, pretend = 0, frame = 0
+ 316              		@ frame_needed = 0, uses_anonymous_args = 0
+  37:Src/lcd.c     ****     while(*c != '\0'){
+ 317              		.loc 1 37 5 view .LVU104
   38:Src/lcd.c     ****         LCDSendChar(interface, *c);
- 382              		.loc 1 38 0
- 383 0006 03E0     		b	.L23
- 384              	.LVL27:
- 385              	.L24:
+ 318              		.loc 1 38 5 view .LVU105
+  38:Src/lcd.c     ****         LCDSendChar(interface, *c);
+ 319              		.loc 1 38 11 is_stmt 0 view .LVU106
+ 320 0000 0B78     		ldrb	r3, [r1]	@ zero_extendqisi2
+  38:Src/lcd.c     ****         LCDSendChar(interface, *c);
+ 321              		.loc 1 38 10 view .LVU107
+ 322 0002 83B1     		cbz	r3, .L22
+  36:Src/lcd.c     ****     char *c = data;
+ 323              		.loc 1 36 54 view .LVU108
+ 324 0004 70B5     		push	{r4, r5, r6, lr}
+ 325              	.LCFI3:
+ 326              		.cfi_def_cfa_offset 16
+ 327              		.cfi_offset 4, -16
+ 328              		.cfi_offset 5, -12
+ 329              		.cfi_offset 6, -8
+ 330              		.cfi_offset 14, -4
+ 331 0006 0D46     		mov	r5, r1
+ 332 0008 0446     		mov	r4, r0
+ 333              	.LBB24:
+ 334              	.LBB25:
+  32:Src/lcd.c     ****     LCDSendInstruction(interface);
+ 335              		.loc 1 32 28 view .LVU109
+ 336 000a 4FF40076 		mov	r6, #512
+ 337              	.LVL15:
+ 338              	.L16:
+  32:Src/lcd.c     ****     LCDSendInstruction(interface);
+ 339              		.loc 1 32 28 view .LVU110
+ 340              	.LBE25:
+ 341              	.LBE24:
   39:Src/lcd.c     ****         c++;
- 386              		.loc 1 39 0
- 387 0008 2846     		mov	r0, r5
- 388 000a FFF7FEFF 		bl	LCDSendChar
- 389              	.LVL28:
+ 342              		.loc 1 39 9 is_stmt 1 view .LVU111
+ 343              	.LBB27:
+ 344              	.LBI24:
+  30:Src/lcd.c     ****     interface->data = c;
+ 345              		.loc 1 30 6 view .LVU112
+ 346              	.LBB26:
+  31:Src/lcd.c     ****     interface->instruction = WRITE;
+ 347              		.loc 1 31 5 view .LVU113
+  31:Src/lcd.c     ****     interface->instruction = WRITE;
+ 348              		.loc 1 31 21 is_stmt 0 view .LVU114
+ 349 000e 84F85A30 		strb	r3, [r4, #90]
+  32:Src/lcd.c     ****     LCDSendInstruction(interface);
+ 350              		.loc 1 32 5 is_stmt 1 view .LVU115
+  32:Src/lcd.c     ****     LCDSendInstruction(interface);
+ARM GAS  /tmp/ccl2tiOX.s 			page 11
+
+
+ 351              		.loc 1 32 28 is_stmt 0 view .LVU116
+ 352 0012 A4F85860 		strh	r6, [r4, #88]	@ movhi
+  33:Src/lcd.c     **** }
+ 353              		.loc 1 33 5 is_stmt 1 view .LVU117
+ 354 0016 2046     		mov	r0, r4
+ 355 0018 FFF7FEFF 		bl	LCDSendInstruction
+ 356              	.LVL16:
+  33:Src/lcd.c     **** }
+ 357              		.loc 1 33 5 is_stmt 0 view .LVU118
+ 358              	.LBE26:
+ 359              	.LBE27:
   40:Src/lcd.c     ****     }
- 390              		.loc 1 40 0
- 391 000e 0134     		adds	r4, r4, #1
- 392              	.LVL29:
- 393              	.L23:
+ 360              		.loc 1 40 9 is_stmt 1 view .LVU119
   38:Src/lcd.c     ****         LCDSendChar(interface, *c);
- 394              		.loc 1 38 0
- 395 0010 2178     		ldrb	r1, [r4]	@ zero_extendqisi2
- 396 0012 0029     		cmp	r1, #0
- 397 0014 F8D1     		bne	.L24
+ 361              		.loc 1 38 11 is_stmt 0 view .LVU120
+ 362 001c 15F8013F 		ldrb	r3, [r5, #1]!	@ zero_extendqisi2
+ 363              	.LVL17:
+  38:Src/lcd.c     ****         LCDSendChar(interface, *c);
+ 364              		.loc 1 38 10 view .LVU121
+ 365 0020 002B     		cmp	r3, #0
+ 366 0022 F4D1     		bne	.L16
   42:Src/lcd.c     **** 
- 398              		.loc 1 42 0
- 399 0016 38BD     		pop	{r3, r4, r5, pc}
- 400              		.cfi_endproc
- 401              	.LFE126:
- 403              		.section	.text.InstructionFunctionSet,"ax",%progbits
- 404              		.align	2
- 405              		.global	InstructionFunctionSet
- 406              		.thumb
- 407              		.thumb_func
- 409              	InstructionFunctionSet:
- 410              	.LFB128:
+ 367              		.loc 1 42 1 view .LVU122
+ 368 0024 70BD     		pop	{r4, r5, r6, pc}
+ 369              	.LVL18:
+ 370              	.L22:
+ 371              	.LCFI4:
+ 372              		.cfi_def_cfa_offset 0
+ 373              		.cfi_restore 4
+ 374              		.cfi_restore 5
+ 375              		.cfi_restore 6
+ 376              		.cfi_restore 14
+  42:Src/lcd.c     **** 
+ 377              		.loc 1 42 1 view .LVU123
+ 378 0026 7047     		bx	lr
+ 379              		.cfi_endproc
+ 380              	.LFE128:
+ 382              		.section	.text.InstructionFunctionSet,"ax",%progbits
+ 383              		.align	1
+ 384              		.p2align 2,,3
+ 385              		.global	InstructionFunctionSet
+ 386              		.syntax unified
+ 387              		.thumb
+ 388              		.thumb_func
+ 389              		.fpu fpv4-sp-d16
+ 391              	InstructionFunctionSet:
+ 392              	.LVL19:
+ 393              	.LFB130:
   60:Src/lcd.c     ****     interface->instruction = FUNCTIONSET;
- 411              		.loc 1 60 0
- 412              		.cfi_startproc
- 413              		@ args = 0, pretend = 0, frame = 0
- 414              		@ frame_needed = 0, uses_anonymous_args = 0
- 415              	.LVL30:
- 416 0000 10B5     		push	{r4, lr}
- 417              	.LCFI9:
- 418              		.cfi_def_cfa_offset 8
-ARM GAS  /tmp/ccXyJqFc.s 			page 11
-
-
- 419              		.cfi_offset 4, -8
- 420              		.cfi_offset 14, -4
+ 394              		.loc 1 60 70 is_stmt 1 view -0
+ 395              		.cfi_startproc
+ 396              		@ args = 0, pretend = 0, frame = 0
+ 397              		@ frame_needed = 0, uses_anonymous_args = 0
+ 398              		@ link register save eliminated.
   61:Src/lcd.c     ****     interface->data = (char)config[5]<<4|config[6]<<3|config[7]<<2;
- 421              		.loc 1 61 0
- 422 0002 2023     		movs	r3, #32
- 423 0004 A0F85830 		strh	r3, [r0, #88]	@ movhi
+ 399              		.loc 1 61 5 view .LVU125
+  60:Src/lcd.c     ****     interface->instruction = FUNCTIONSET;
+ARM GAS  /tmp/ccl2tiOX.s 			page 12
+
+
+ 400              		.loc 1 60 70 is_stmt 0 view .LVU126
+ 401 0000 10B4     		push	{r4}
+ 402              	.LCFI5:
+ 403              		.cfi_def_cfa_offset 4
+ 404              		.cfi_offset 4, -4
+  61:Src/lcd.c     ****     interface->data = (char)config[5]<<4|config[6]<<3|config[7]<<2;
+ 405              		.loc 1 61 28 view .LVU127
+ 406 0002 2023     		movs	r3, #32
+ 407 0004 A0F85830 		strh	r3, [r0, #88]	@ movhi
   62:Src/lcd.c     ****     LCDSendInstruction(interface);
- 424              		.loc 1 62 0
- 425 0008 4B79     		ldrb	r3, [r1, #5]	@ zero_extendqisi2
- 426 000a 8A79     		ldrb	r2, [r1, #6]	@ zero_extendqisi2
- 427 000c D200     		lsls	r2, r2, #3
- 428 000e C979     		ldrb	r1, [r1, #7]	@ zero_extendqisi2
- 429              	.LVL31:
- 430 0010 42EA0313 		orr	r3, r2, r3, lsl #4
- 431 0014 43EA8103 		orr	r3, r3, r1, lsl #2
- 432 0018 80F85A30 		strb	r3, [r0, #90]
+ 408              		.loc 1 62 5 is_stmt 1 view .LVU128
+  62:Src/lcd.c     ****     LCDSendInstruction(interface);
+ 409              		.loc 1 62 48 is_stmt 0 view .LVU129
+ 410 0008 8B79     		ldrb	r3, [r1, #6]	@ zero_extendqisi2
+  62:Src/lcd.c     ****     LCDSendInstruction(interface);
+ 411              		.loc 1 62 35 view .LVU130
+ 412 000a 4C79     		ldrb	r4, [r1, #5]	@ zero_extendqisi2
+  62:Src/lcd.c     ****     LCDSendInstruction(interface);
+ 413              		.loc 1 62 61 view .LVU131
+ 414 000c C979     		ldrb	r1, [r1, #7]	@ zero_extendqisi2
+ 415              	.LVL20:
+  62:Src/lcd.c     ****     LCDSendInstruction(interface);
+ 416              		.loc 1 62 51 view .LVU132
+ 417 000e DB00     		lsls	r3, r3, #3
+  62:Src/lcd.c     ****     LCDSendInstruction(interface);
+ 418              		.loc 1 62 41 view .LVU133
+ 419 0010 43EA0413 		orr	r3, r3, r4, lsl #4
+  62:Src/lcd.c     ****     LCDSendInstruction(interface);
+ 420              		.loc 1 62 54 view .LVU134
+ 421 0014 43EA8103 		orr	r3, r3, r1, lsl #2
+  62:Src/lcd.c     ****     LCDSendInstruction(interface);
+ 422              		.loc 1 62 21 view .LVU135
+ 423 0018 80F85A30 		strb	r3, [r0, #90]
   63:Src/lcd.c     **** }
- 433              		.loc 1 63 0
- 434 001c FFF7FEFF 		bl	LCDSendInstruction
- 435              	.LVL32:
- 436 0020 10BD     		pop	{r4, pc}
- 437              		.cfi_endproc
- 438              	.LFE128:
- 440 0022 00BF     		.section	.text.InstructionFunctionSetStart,"ax",%progbits
- 441              		.align	2
- 442              		.global	InstructionFunctionSetStart
- 443              		.thumb
- 444              		.thumb_func
+ 424              		.loc 1 63 5 is_stmt 1 view .LVU136
+  64:Src/lcd.c     **** 
+ 425              		.loc 1 64 1 is_stmt 0 view .LVU137
+ 426 001c 5DF8044B 		ldr	r4, [sp], #4
+ 427              	.LCFI6:
+ 428              		.cfi_restore 4
+ 429              		.cfi_def_cfa_offset 0
+  63:Src/lcd.c     **** }
+ 430              		.loc 1 63 5 view .LVU138
+ 431 0020 FFF7FEBF 		b	LCDSendInstruction
+ 432              	.LVL21:
+  63:Src/lcd.c     **** }
+ 433              		.loc 1 63 5 view .LVU139
+ 434              		.cfi_endproc
+ 435              	.LFE130:
+ 437              		.section	.text.InstructionFunctionSetStart,"ax",%progbits
+ 438              		.align	1
+ 439              		.p2align 2,,3
+ 440              		.global	InstructionFunctionSetStart
+ 441              		.syntax unified
+ 442              		.thumb
+ 443              		.thumb_func
+ 444              		.fpu fpv4-sp-d16
+ARM GAS  /tmp/ccl2tiOX.s 			page 13
+
+
  446              	InstructionFunctionSetStart:
- 447              	.LFB129:
+ 447              	.LVL22:
+ 448              	.LFB131:
   66:Src/lcd.c     ****     int i;
- 448              		.loc 1 66 0
- 449              		.cfi_startproc
- 450              		@ args = 0, pretend = 0, frame = 0
- 451              		@ frame_needed = 0, uses_anonymous_args = 0
- 452              	.LVL33:
- 453 0000 70B5     		push	{r4, r5, r6, lr}
- 454              	.LCFI10:
- 455              		.cfi_def_cfa_offset 16
- 456              		.cfi_offset 4, -16
- 457              		.cfi_offset 5, -12
- 458              		.cfi_offset 6, -8
- 459              		.cfi_offset 14, -4
- 460 0002 0646     		mov	r6, r0
- 461 0004 0D46     		mov	r5, r1
+ 449              		.loc 1 66 75 is_stmt 1 view -0
+ 450              		.cfi_startproc
+ 451              		@ args = 0, pretend = 0, frame = 0
+ 452              		@ frame_needed = 0, uses_anonymous_args = 0
+  67:Src/lcd.c     ****     InstructionFunctionSet(interface, config);
+ 453              		.loc 1 67 5 view .LVU141
   68:Src/lcd.c     ****     HAL_Delay(5);
- 462              		.loc 1 68 0
- 463 0006 FFF7FEFF 		bl	InstructionFunctionSet
- 464              	.LVL34:
+ 454              		.loc 1 68 5 view .LVU142
+  66:Src/lcd.c     ****     int i;
+ 455              		.loc 1 66 75 is_stmt 0 view .LVU143
+ 456 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
+ 457              	.LCFI7:
+ 458              		.cfi_def_cfa_offset 24
+ 459              		.cfi_offset 3, -24
+ 460              		.cfi_offset 4, -20
+ 461              		.cfi_offset 5, -16
+ 462              		.cfi_offset 6, -12
+ 463              		.cfi_offset 7, -8
+ 464              		.cfi_offset 14, -4
+ 465              	.LBB32:
+ 466              	.LBB33:
+  61:Src/lcd.c     ****     interface->data = (char)config[5]<<4|config[6]<<3|config[7]<<2;
+ 467              		.loc 1 61 28 view .LVU144
+ 468 0002 2027     		movs	r7, #32
+ 469 0004 A0F85870 		strh	r7, [r0, #88]	@ movhi
+  62:Src/lcd.c     ****     LCDSendInstruction(interface);
+ 470              		.loc 1 62 48 view .LVU145
+ 471 0008 8B79     		ldrb	r3, [r1, #6]	@ zero_extendqisi2
+ 472              	.LBE33:
+ 473              	.LBE32:
+  66:Src/lcd.c     ****     int i;
+ 474              		.loc 1 66 75 view .LVU146
+ 475 000a 0C46     		mov	r4, r1
+ 476              	.LBB36:
+ 477              	.LBB34:
+  62:Src/lcd.c     ****     LCDSendInstruction(interface);
+ 478              		.loc 1 62 35 view .LVU147
+ 479 000c 4979     		ldrb	r1, [r1, #5]	@ zero_extendqisi2
+ 480              	.LVL23:
+  62:Src/lcd.c     ****     LCDSendInstruction(interface);
+ 481              		.loc 1 62 61 view .LVU148
+ 482 000e E279     		ldrb	r2, [r4, #7]	@ zero_extendqisi2
+  62:Src/lcd.c     ****     LCDSendInstruction(interface);
+ 483              		.loc 1 62 51 view .LVU149
+ 484 0010 DB00     		lsls	r3, r3, #3
+  62:Src/lcd.c     ****     LCDSendInstruction(interface);
+ 485              		.loc 1 62 41 view .LVU150
+ 486 0012 43EA0113 		orr	r3, r3, r1, lsl #4
+  62:Src/lcd.c     ****     LCDSendInstruction(interface);
+ 487              		.loc 1 62 54 view .LVU151
+ 488 0016 43EA8203 		orr	r3, r3, r2, lsl #2
+  62:Src/lcd.c     ****     LCDSendInstruction(interface);
+ 489              		.loc 1 62 21 view .LVU152
+ARM GAS  /tmp/ccl2tiOX.s 			page 14
+
+
+ 490 001a 80F85A30 		strb	r3, [r0, #90]
+ 491              	.LBE34:
+ 492              	.LBE36:
+  66:Src/lcd.c     ****     int i;
+ 493              		.loc 1 66 75 view .LVU153
+ 494 001e 0546     		mov	r5, r0
+ 495              	.LVL24:
+ 496              	.LBB37:
+ 497              	.LBI32:
+  60:Src/lcd.c     ****     interface->instruction = FUNCTIONSET;
+ 498              		.loc 1 60 6 is_stmt 1 view .LVU154
+ 499              	.LBB35:
+  61:Src/lcd.c     ****     interface->data = (char)config[5]<<4|config[6]<<3|config[7]<<2;
+ 500              		.loc 1 61 5 view .LVU155
+  62:Src/lcd.c     ****     LCDSendInstruction(interface);
+ 501              		.loc 1 62 5 view .LVU156
+  63:Src/lcd.c     **** }
+ 502              		.loc 1 63 5 view .LVU157
+ 503 0020 FFF7FEFF 		bl	LCDSendInstruction
+ 504              	.LVL25:
+  63:Src/lcd.c     **** }
+ 505              		.loc 1 63 5 is_stmt 0 view .LVU158
+ 506              	.LBE35:
+ 507              	.LBE37:
   69:Src/lcd.c     **** 
- 465              		.loc 1 69 0
- 466 000a 0520     		movs	r0, #5
- 467 000c FFF7FEFF 		bl	HAL_Delay
- 468              	.LVL35:
+ 508              		.loc 1 69 5 is_stmt 1 view .LVU159
+ 509 0024 0520     		movs	r0, #5
+ 510 0026 FFF7FEFF 		bl	HAL_Delay
+ 511              	.LVL26:
   71:Src/lcd.c     ****         InstructionFunctionSet(interface, config);
- 469              		.loc 1 71 0
- 470 0010 0024     		movs	r4, #0
-ARM GAS  /tmp/ccXyJqFc.s 			page 12
-
-
- 471 0012 07E0     		b	.L29
- 472              	.LVL36:
- 473              	.L30:
+ 512              		.loc 1 71 5 view .LVU160
+  69:Src/lcd.c     **** 
+ 513              		.loc 1 69 5 is_stmt 0 view .LVU161
+ 514 002a 0326     		movs	r6, #3
+ 515              	.LVL27:
+ 516              	.L28:
   72:Src/lcd.c     ****         HAL_Delay(1);
- 474              		.loc 1 72 0 discriminator 3
- 475 0014 2946     		mov	r1, r5
- 476 0016 3046     		mov	r0, r6
- 477 0018 FFF7FEFF 		bl	InstructionFunctionSet
- 478              	.LVL37:
+ 517              		.loc 1 72 9 is_stmt 1 view .LVU162
+ 518              	.LBB38:
+ 519              	.LBI38:
+  60:Src/lcd.c     ****     interface->instruction = FUNCTIONSET;
+ 520              		.loc 1 60 6 view .LVU163
+ 521              	.LBB39:
+  61:Src/lcd.c     ****     interface->data = (char)config[5]<<4|config[6]<<3|config[7]<<2;
+ 522              		.loc 1 61 5 view .LVU164
+  61:Src/lcd.c     ****     interface->data = (char)config[5]<<4|config[6]<<3|config[7]<<2;
+ 523              		.loc 1 61 28 is_stmt 0 view .LVU165
+ 524 002c A5F85870 		strh	r7, [r5, #88]	@ movhi
+  62:Src/lcd.c     ****     LCDSendInstruction(interface);
+ 525              		.loc 1 62 5 is_stmt 1 view .LVU166
+  62:Src/lcd.c     ****     LCDSendInstruction(interface);
+ 526              		.loc 1 62 48 is_stmt 0 view .LVU167
+ 527 0030 A379     		ldrb	r3, [r4, #6]	@ zero_extendqisi2
+  62:Src/lcd.c     ****     LCDSendInstruction(interface);
+ 528              		.loc 1 62 35 view .LVU168
+ 529 0032 6179     		ldrb	r1, [r4, #5]	@ zero_extendqisi2
+  62:Src/lcd.c     ****     LCDSendInstruction(interface);
+ARM GAS  /tmp/ccl2tiOX.s 			page 15
+
+
+ 530              		.loc 1 62 61 view .LVU169
+ 531 0034 E279     		ldrb	r2, [r4, #7]	@ zero_extendqisi2
+  62:Src/lcd.c     ****     LCDSendInstruction(interface);
+ 532              		.loc 1 62 51 view .LVU170
+ 533 0036 DB00     		lsls	r3, r3, #3
+  62:Src/lcd.c     ****     LCDSendInstruction(interface);
+ 534              		.loc 1 62 41 view .LVU171
+ 535 0038 43EA0113 		orr	r3, r3, r1, lsl #4
+  62:Src/lcd.c     ****     LCDSendInstruction(interface);
+ 536              		.loc 1 62 54 view .LVU172
+ 537 003c 43EA8203 		orr	r3, r3, r2, lsl #2
+  62:Src/lcd.c     ****     LCDSendInstruction(interface);
+ 538              		.loc 1 62 21 view .LVU173
+ 539 0040 85F85A30 		strb	r3, [r5, #90]
+  63:Src/lcd.c     **** }
+ 540              		.loc 1 63 5 is_stmt 1 view .LVU174
+ 541 0044 2846     		mov	r0, r5
+ 542 0046 FFF7FEFF 		bl	LCDSendInstruction
+ 543              	.LVL28:
+  63:Src/lcd.c     **** }
+ 544              		.loc 1 63 5 is_stmt 0 view .LVU175
+ 545              	.LBE39:
+ 546              	.LBE38:
   73:Src/lcd.c     ****     }
- 479              		.loc 1 73 0 discriminator 3
- 480 001c 0120     		movs	r0, #1
- 481 001e FFF7FEFF 		bl	HAL_Delay
- 482              	.LVL38:
+ 547              		.loc 1 73 9 is_stmt 1 view .LVU176
+ 548 004a 0120     		movs	r0, #1
+ 549 004c FFF7FEFF 		bl	HAL_Delay
+ 550              	.LVL29:
   71:Src/lcd.c     ****         InstructionFunctionSet(interface, config);
- 483              		.loc 1 71 0 discriminator 3
- 484 0022 0134     		adds	r4, r4, #1
- 485              	.LVL39:
- 486              	.L29:
-  71:Src/lcd.c     ****         InstructionFunctionSet(interface, config);
- 487              		.loc 1 71 0 is_stmt 0 discriminator 1
- 488 0024 022C     		cmp	r4, #2
- 489 0026 F5DD     		ble	.L30
+ 551              		.loc 1 71 5 is_stmt 0 view .LVU177
+ 552 0050 013E     		subs	r6, r6, #1
+ 553 0052 EBD1     		bne	.L28
   75:Src/lcd.c     **** 
- 490              		.loc 1 75 0 is_stmt 1
- 491 0028 70BD     		pop	{r4, r5, r6, pc}
- 492              		.cfi_endproc
- 493              	.LFE129:
- 495 002a 00BF     		.section	.text.InstructionDisplay,"ax",%progbits
- 496              		.align	2
- 497              		.global	InstructionDisplay
- 498              		.thumb
- 499              		.thumb_func
- 501              	InstructionDisplay:
- 502              	.LFB130:
+ 554              		.loc 1 75 1 view .LVU178
+ 555 0054 F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+  75:Src/lcd.c     **** 
+ 556              		.loc 1 75 1 view .LVU179
+ 557              		.cfi_endproc
+ 558              	.LFE131:
+ 560 0056 00BF     		.section	.text.InstructionDisplay,"ax",%progbits
+ 561              		.align	1
+ 562              		.p2align 2,,3
+ 563              		.global	InstructionDisplay
+ 564              		.syntax unified
+ 565              		.thumb
+ 566              		.thumb_func
+ 567              		.fpu fpv4-sp-d16
+ 569              	InstructionDisplay:
+ 570              	.LVL30:
+ 571              	.LFB132:
   77:Src/lcd.c     ****     interface->instruction = DISPLAY;
- 503              		.loc 1 77 0
- 504              		.cfi_startproc
- 505              		@ args = 0, pretend = 0, frame = 0
- 506              		@ frame_needed = 0, uses_anonymous_args = 0
- 507              	.LVL40:
- 508 0000 10B5     		push	{r4, lr}
- 509              	.LCFI11:
- 510              		.cfi_def_cfa_offset 8
- 511              		.cfi_offset 4, -8
- 512              		.cfi_offset 14, -4
+ 572              		.loc 1 77 66 is_stmt 1 view -0
+ 573              		.cfi_startproc
+ 574              		@ args = 0, pretend = 0, frame = 0
+ 575              		@ frame_needed = 0, uses_anonymous_args = 0
+ 576              		@ link register save eliminated.
   78:Src/lcd.c     ****     interface->data = (char)config[2]<<2|config[3]<<1|config[4]<<0;
- 513              		.loc 1 78 0
- 514 0002 0823     		movs	r3, #8
- 515 0004 A0F85830 		strh	r3, [r0, #88]	@ movhi
+ARM GAS  /tmp/ccl2tiOX.s 			page 16
+
+
+ 577              		.loc 1 78 5 view .LVU181
+  77:Src/lcd.c     ****     interface->instruction = DISPLAY;
+ 578              		.loc 1 77 66 is_stmt 0 view .LVU182
+ 579 0000 10B4     		push	{r4}
+ 580              	.LCFI8:
+ 581              		.cfi_def_cfa_offset 4
+ 582              		.cfi_offset 4, -4
+  78:Src/lcd.c     ****     interface->data = (char)config[2]<<2|config[3]<<1|config[4]<<0;
+ 583              		.loc 1 78 28 view .LVU183
+ 584 0002 0823     		movs	r3, #8
+ 585 0004 A0F85830 		strh	r3, [r0, #88]	@ movhi
   79:Src/lcd.c     ****     LCDSendInstruction(interface);
- 516              		.loc 1 79 0
- 517 0008 8B78     		ldrb	r3, [r1, #2]	@ zero_extendqisi2
- 518 000a CA78     		ldrb	r2, [r1, #3]	@ zero_extendqisi2
- 519 000c 5200     		lsls	r2, r2, #1
- 520 000e 0979     		ldrb	r1, [r1, #4]	@ zero_extendqisi2
- 521              	.LVL41:
-ARM GAS  /tmp/ccXyJqFc.s 			page 13
-
-
- 522 0010 42EA8303 		orr	r3, r2, r3, lsl #2
- 523 0014 0B43     		orrs	r3, r3, r1
- 524 0016 80F85A30 		strb	r3, [r0, #90]
+ 586              		.loc 1 79 5 is_stmt 1 view .LVU184
+  79:Src/lcd.c     ****     LCDSendInstruction(interface);
+ 587              		.loc 1 79 48 is_stmt 0 view .LVU185
+ 588 0008 CB78     		ldrb	r3, [r1, #3]	@ zero_extendqisi2
+  79:Src/lcd.c     ****     LCDSendInstruction(interface);
+ 589              		.loc 1 79 35 view .LVU186
+ 590 000a 8C78     		ldrb	r4, [r1, #2]	@ zero_extendqisi2
+  79:Src/lcd.c     ****     LCDSendInstruction(interface);
+ 591              		.loc 1 79 54 view .LVU187
+ 592 000c 0979     		ldrb	r1, [r1, #4]	@ zero_extendqisi2
+ 593              	.LVL31:
+  79:Src/lcd.c     ****     LCDSendInstruction(interface);
+ 594              		.loc 1 79 51 view .LVU188
+ 595 000e 5B00     		lsls	r3, r3, #1
+  79:Src/lcd.c     ****     LCDSendInstruction(interface);
+ 596              		.loc 1 79 41 view .LVU189
+ 597 0010 43EA8403 		orr	r3, r3, r4, lsl #2
+  79:Src/lcd.c     ****     LCDSendInstruction(interface);
+ 598              		.loc 1 79 54 view .LVU190
+ 599 0014 0B43     		orrs	r3, r3, r1
+  79:Src/lcd.c     ****     LCDSendInstruction(interface);
+ 600              		.loc 1 79 21 view .LVU191
+ 601 0016 80F85A30 		strb	r3, [r0, #90]
   80:Src/lcd.c     **** }
- 525              		.loc 1 80 0
- 526 001a FFF7FEFF 		bl	LCDSendInstruction
- 527              	.LVL42:
- 528 001e 10BD     		pop	{r4, pc}
- 529              		.cfi_endproc
- 530              	.LFE130:
- 532              		.section	.text.InstructionEntryModeSet,"ax",%progbits
- 533              		.align	2
- 534              		.global	InstructionEntryModeSet
- 535              		.thumb
- 536              		.thumb_func
- 538              	InstructionEntryModeSet:
- 539              	.LFB131:
+ 602              		.loc 1 80 5 is_stmt 1 view .LVU192
+  81:Src/lcd.c     **** 
+ 603              		.loc 1 81 1 is_stmt 0 view .LVU193
+ 604 001a 5DF8044B 		ldr	r4, [sp], #4
+ 605              	.LCFI9:
+ 606              		.cfi_restore 4
+ 607              		.cfi_def_cfa_offset 0
+  80:Src/lcd.c     **** }
+ 608              		.loc 1 80 5 view .LVU194
+ 609 001e FFF7FEBF 		b	LCDSendInstruction
+ 610              	.LVL32:
+  80:Src/lcd.c     **** }
+ 611              		.loc 1 80 5 view .LVU195
+ 612              		.cfi_endproc
+ 613              	.LFE132:
+ 615 0022 00BF     		.section	.text.InstructionEntryModeSet,"ax",%progbits
+ 616              		.align	1
+ 617              		.p2align 2,,3
+ 618              		.global	InstructionEntryModeSet
+ 619              		.syntax unified
+ 620              		.thumb
+ARM GAS  /tmp/ccl2tiOX.s 			page 17
+
+
+ 621              		.thumb_func
+ 622              		.fpu fpv4-sp-d16
+ 624              	InstructionEntryModeSet:
+ 625              	.LVL33:
+ 626              	.LFB133:
   83:Src/lcd.c     ****     interface->instruction = ENTRYMODESET;
- 540              		.loc 1 83 0
- 541              		.cfi_startproc
- 542              		@ args = 0, pretend = 0, frame = 0
- 543              		@ frame_needed = 0, uses_anonymous_args = 0
- 544              	.LVL43:
- 545 0000 10B5     		push	{r4, lr}
- 546              	.LCFI12:
- 547              		.cfi_def_cfa_offset 8
- 548              		.cfi_offset 4, -8
- 549              		.cfi_offset 14, -4
+ 627              		.loc 1 83 71 is_stmt 1 view -0
+ 628              		.cfi_startproc
+ 629              		@ args = 0, pretend = 0, frame = 0
+ 630              		@ frame_needed = 0, uses_anonymous_args = 0
+ 631              		@ link register save eliminated.
   84:Src/lcd.c     ****     interface->data = (char)config[1]<<1|config[0]<<0;
- 550              		.loc 1 84 0
- 551 0002 0423     		movs	r3, #4
- 552 0004 A0F85830 		strh	r3, [r0, #88]	@ movhi
+ 632              		.loc 1 84 5 view .LVU197
+  84:Src/lcd.c     ****     interface->data = (char)config[1]<<1|config[0]<<0;
+ 633              		.loc 1 84 28 is_stmt 0 view .LVU198
+ 634 0000 0423     		movs	r3, #4
+ 635 0002 A0F85830 		strh	r3, [r0, #88]	@ movhi
   85:Src/lcd.c     ****     LCDSendInstruction(interface);
- 553              		.loc 1 85 0
- 554 0008 4C78     		ldrb	r4, [r1, #1]	@ zero_extendqisi2
- 555 000a 0B78     		ldrb	r3, [r1]	@ zero_extendqisi2
- 556 000c 43EA4403 		orr	r3, r3, r4, lsl #1
- 557 0010 80F85A30 		strb	r3, [r0, #90]
+ 636              		.loc 1 85 5 is_stmt 1 view .LVU199
+  83:Src/lcd.c     ****     interface->instruction = ENTRYMODESET;
+ 637              		.loc 1 83 71 is_stmt 0 view .LVU200
+ 638 0006 10B4     		push	{r4}
+ 639              	.LCFI10:
+ 640              		.cfi_def_cfa_offset 4
+ 641              		.cfi_offset 4, -4
+  85:Src/lcd.c     ****     LCDSendInstruction(interface);
+ 642              		.loc 1 85 41 view .LVU201
+ 643 0008 0B78     		ldrb	r3, [r1]	@ zero_extendqisi2
+  85:Src/lcd.c     ****     LCDSendInstruction(interface);
+ 644              		.loc 1 85 35 view .LVU202
+ 645 000a 4C78     		ldrb	r4, [r1, #1]	@ zero_extendqisi2
+  85:Src/lcd.c     ****     LCDSendInstruction(interface);
+ 646              		.loc 1 85 41 view .LVU203
+ 647 000c 43EA4403 		orr	r3, r3, r4, lsl #1
+  85:Src/lcd.c     ****     LCDSendInstruction(interface);
+ 648              		.loc 1 85 21 view .LVU204
+ 649 0010 80F85A30 		strb	r3, [r0, #90]
   86:Src/lcd.c     **** }
- 558              		.loc 1 86 0
- 559 0014 FFF7FEFF 		bl	LCDSendInstruction
- 560              	.LVL44:
- 561 0018 10BD     		pop	{r4, pc}
- 562              		.cfi_endproc
- 563              	.LFE131:
- 565 001a 00BF     		.section	.text.InstructionClearDisplay,"ax",%progbits
- 566              		.align	2
- 567              		.global	InstructionClearDisplay
- 568              		.thumb
- 569              		.thumb_func
- 571              	InstructionClearDisplay:
- 572              	.LFB132:
+ 650              		.loc 1 86 5 is_stmt 1 view .LVU205
+  87:Src/lcd.c     **** 
+ 651              		.loc 1 87 1 is_stmt 0 view .LVU206
+ 652 0014 5DF8044B 		ldr	r4, [sp], #4
+ 653              	.LCFI11:
+ 654              		.cfi_restore 4
+ 655              		.cfi_def_cfa_offset 0
+  86:Src/lcd.c     **** }
+ 656              		.loc 1 86 5 view .LVU207
+ 657 0018 FFF7FEBF 		b	LCDSendInstruction
+ 658              	.LVL34:
+  86:Src/lcd.c     **** }
+ 659              		.loc 1 86 5 view .LVU208
+ 660              		.cfi_endproc
+ 661              	.LFE133:
+ 663              		.section	.text.InstructionClearDisplay,"ax",%progbits
+ 664              		.align	1
+ 665              		.p2align 2,,3
+ 666              		.global	InstructionClearDisplay
+ARM GAS  /tmp/ccl2tiOX.s 			page 18
+
+
+ 667              		.syntax unified
+ 668              		.thumb
+ 669              		.thumb_func
+ 670              		.fpu fpv4-sp-d16
+ 672              	InstructionClearDisplay:
+ 673              	.LVL35:
+ 674              	.LFB134:
   89:Src/lcd.c     ****     interface->instruction = CLEARDISPLAY;
- 573              		.loc 1 89 0
- 574              		.cfi_startproc
- 575              		@ args = 0, pretend = 0, frame = 0
- 576              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  /tmp/ccXyJqFc.s 			page 14
-
-
- 577              	.LVL45:
- 578 0000 08B5     		push	{r3, lr}
- 579              	.LCFI13:
- 580              		.cfi_def_cfa_offset 8
- 581              		.cfi_offset 3, -8
- 582              		.cfi_offset 14, -4
+ 675              		.loc 1 89 54 is_stmt 1 view -0
+ 676              		.cfi_startproc
+ 677              		@ args = 0, pretend = 0, frame = 0
+ 678              		@ frame_needed = 0, uses_anonymous_args = 0
+ 679              		@ link register save eliminated.
   90:Src/lcd.c     ****     interface->data = 0;
- 583              		.loc 1 90 0
- 584 0002 0122     		movs	r2, #1
- 585 0004 A0F85820 		strh	r2, [r0, #88]	@ movhi
+ 680              		.loc 1 90 5 view .LVU210
+  90:Src/lcd.c     ****     interface->data = 0;
+ 681              		.loc 1 90 28 is_stmt 0 view .LVU211
+ 682 0000 0121     		movs	r1, #1
   91:Src/lcd.c     ****     LCDSendInstruction(interface);
- 586              		.loc 1 91 0
- 587 0008 0022     		movs	r2, #0
- 588 000a 80F85A20 		strb	r2, [r0, #90]
+ 683              		.loc 1 91 21 view .LVU212
+ 684 0002 0022     		movs	r2, #0
+  90:Src/lcd.c     ****     interface->data = 0;
+ 685              		.loc 1 90 28 view .LVU213
+ 686 0004 A0F85810 		strh	r1, [r0, #88]	@ movhi
+  91:Src/lcd.c     ****     LCDSendInstruction(interface);
+ 687              		.loc 1 91 5 is_stmt 1 view .LVU214
+  91:Src/lcd.c     ****     LCDSendInstruction(interface);
+ 688              		.loc 1 91 21 is_stmt 0 view .LVU215
+ 689 0008 80F85A20 		strb	r2, [r0, #90]
   92:Src/lcd.c     **** }
- 589              		.loc 1 92 0
- 590 000e FFF7FEFF 		bl	LCDSendInstruction
- 591              	.LVL46:
- 592 0012 08BD     		pop	{r3, pc}
- 593              		.cfi_endproc
- 594              	.LFE132:
- 596              		.section	.text.InstructionReturnHome,"ax",%progbits
- 597              		.align	2
- 598              		.global	InstructionReturnHome
- 599              		.thumb
- 600              		.thumb_func
- 602              	InstructionReturnHome:
- 603              	.LFB133:
+ 690              		.loc 1 92 5 is_stmt 1 view .LVU216
+ 691 000c FFF7FEBF 		b	LCDSendInstruction
+ 692              	.LVL36:
+  92:Src/lcd.c     **** }
+ 693              		.loc 1 92 5 is_stmt 0 view .LVU217
+ 694              		.cfi_endproc
+ 695              	.LFE134:
+ 697              		.section	.text.InstructionReturnHome,"ax",%progbits
+ 698              		.align	1
+ 699              		.p2align 2,,3
+ 700              		.global	InstructionReturnHome
+ 701              		.syntax unified
+ 702              		.thumb
+ 703              		.thumb_func
+ 704              		.fpu fpv4-sp-d16
+ 706              	InstructionReturnHome:
+ 707              	.LVL37:
+ 708              	.LFB135:
   95:Src/lcd.c     ****     interface->instruction = RETURNHOME;
- 604              		.loc 1 95 0
- 605              		.cfi_startproc
- 606              		@ args = 0, pretend = 0, frame = 0
- 607              		@ frame_needed = 0, uses_anonymous_args = 0
- 608              	.LVL47:
- 609 0000 08B5     		push	{r3, lr}
- 610              	.LCFI14:
- 611              		.cfi_def_cfa_offset 8
- 612              		.cfi_offset 3, -8
- 613              		.cfi_offset 14, -4
+ 709              		.loc 1 95 52 is_stmt 1 view -0
+ 710              		.cfi_startproc
+ 711              		@ args = 0, pretend = 0, frame = 0
+ 712              		@ frame_needed = 0, uses_anonymous_args = 0
+ 713              		@ link register save eliminated.
   96:Src/lcd.c     ****     LCDSendInstruction(interface);
- 614              		.loc 1 96 0
- 615 0002 0223     		movs	r3, #2
- 616 0004 A0F85830 		strh	r3, [r0, #88]	@ movhi
+ 714              		.loc 1 96 5 view .LVU219
+  96:Src/lcd.c     ****     LCDSendInstruction(interface);
+ARM GAS  /tmp/ccl2tiOX.s 			page 19
+
+
+ 715              		.loc 1 96 28 is_stmt 0 view .LVU220
+ 716 0000 0223     		movs	r3, #2
+ 717 0002 A0F85830 		strh	r3, [r0, #88]	@ movhi
   97:Src/lcd.c     **** }
- 617              		.loc 1 97 0
- 618 0008 FFF7FEFF 		bl	LCDSendInstruction
- 619              	.LVL48:
- 620 000c 08BD     		pop	{r3, pc}
- 621              		.cfi_endproc
- 622              	.LFE133:
- 624 000e 00BF     		.section	.text.LCDInit,"ax",%progbits
- 625              		.align	2
- 626              		.global	LCDInit
- 627              		.thumb
- 628              		.thumb_func
- 630              	LCDInit:
- 631              	.LFB134:
-ARM GAS  /tmp/ccXyJqFc.s 			page 15
-
-
+ 718              		.loc 1 97 5 is_stmt 1 view .LVU221
+ 719 0006 FFF7FEBF 		b	LCDSendInstruction
+ 720              	.LVL38:
+  97:Src/lcd.c     **** }
+ 721              		.loc 1 97 5 is_stmt 0 view .LVU222
+ 722              		.cfi_endproc
+ 723              	.LFE135:
+ 725 000a 00BF     		.section	.text.LCDInit,"ax",%progbits
+ 726              		.align	1
+ 727              		.p2align 2,,3
+ 728              		.global	LCDInit
+ 729              		.syntax unified
+ 730              		.thumb
+ 731              		.thumb_func
+ 732              		.fpu fpv4-sp-d16
+ 734              	LCDInit:
+ 735              	.LVL39:
+ 736              	.LFB136:
  100:Src/lcd.c     ****     LCDInterfaceInitialisation(interface);
- 632              		.loc 1 100 0
- 633              		.cfi_startproc
- 634              		@ args = 0, pretend = 0, frame = 0
- 635              		@ frame_needed = 0, uses_anonymous_args = 0
- 636              	.LVL49:
- 637 0000 38B5     		push	{r3, r4, r5, lr}
- 638              	.LCFI15:
- 639              		.cfi_def_cfa_offset 16
- 640              		.cfi_offset 3, -16
- 641              		.cfi_offset 4, -12
- 642              		.cfi_offset 5, -8
- 643              		.cfi_offset 14, -4
- 644 0002 0446     		mov	r4, r0
- 645 0004 0D46     		mov	r5, r1
+ 737              		.loc 1 100 55 is_stmt 1 view -0
+ 738              		.cfi_startproc
+ 739              		@ args = 0, pretend = 0, frame = 0
+ 740              		@ frame_needed = 0, uses_anonymous_args = 0
  101:Src/lcd.c     ****     HAL_Delay(20);
- 646              		.loc 1 101 0
- 647 0006 FFF7FEFF 		bl	LCDInterfaceInitialisation
- 648              	.LVL50:
+ 741              		.loc 1 101 5 view .LVU224
+ 100:Src/lcd.c     ****     LCDInterfaceInitialisation(interface);
+ 742              		.loc 1 100 55 is_stmt 0 view .LVU225
+ 743 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
+ 744              	.LCFI12:
+ 745              		.cfi_def_cfa_offset 24
+ 746              		.cfi_offset 3, -24
+ 747              		.cfi_offset 4, -20
+ 748              		.cfi_offset 5, -16
+ 749              		.cfi_offset 6, -12
+ 750              		.cfi_offset 7, -8
+ 751              		.cfi_offset 14, -4
+ 100:Src/lcd.c     ****     LCDInterfaceInitialisation(interface);
+ 752              		.loc 1 100 55 view .LVU226
+ 753 0002 0446     		mov	r4, r0
+ 754              	.LVL40:
+ 755              	.LBB54:
+ 756              	.LBI54:
+   4:Src/lcd.c     ****     (interface->pinout[0]).port = LCD_D0_GPIO_Port;
+ 757              		.loc 1 4 6 is_stmt 1 view .LVU227
+ 758              	.LBB55:
+   5:Src/lcd.c     ****     (interface->pinout[0]).pin = LCD_D0_Pin;
+ 759              		.loc 1 5 5 view .LVU228
+  10:Src/lcd.c     ****     (interface->pinout[3]).port = LCD_D3_GPIO_Port;
+ 760              		.loc 1 10 32 is_stmt 0 view .LVU229
+ 761 0004 1022     		movs	r2, #16
+   6:Src/lcd.c     ****     (interface->pinout[1]).port = LCD_D1_GPIO_Port;
+ 762              		.loc 1 6 32 view .LVU230
+ 763 0006 0420     		movs	r0, #4
+ARM GAS  /tmp/ccl2tiOX.s 			page 20
+
+
+ 764              	.LVL41:
+  14:Src/lcd.c     ****     (interface->pinout[5]).port = LCD_D5_GPIO_Port;
+ 765              		.loc 1 14 32 view .LVU231
+ 766 0008 4023     		movs	r3, #64
+ 767              	.LBE55:
+ 768              	.LBE54:
+ 100:Src/lcd.c     ****     LCDInterfaceInitialisation(interface);
+ 769              		.loc 1 100 55 view .LVU232
+ 770 000a 0D46     		mov	r5, r1
+ 771              	.LBB58:
+ 772              	.LBB56:
+   8:Src/lcd.c     ****     (interface->pinout[2]).port = LCD_D2_GPIO_Port;
+ 773              		.loc 1 8 32 view .LVU233
+ 774 000c 0826     		movs	r6, #8
+   6:Src/lcd.c     ****     (interface->pinout[1]).port = LCD_D1_GPIO_Port;
+ 775              		.loc 1 6 32 view .LVU234
+ 776 000e A080     		strh	r0, [r4, #4]	@ movhi
+  18:Src/lcd.c     ****     (interface->pinout[7]).port = LCD_D7_GPIO_Port;
+ 777              		.loc 1 18 32 view .LVU235
+ 778 0010 4FF48071 		mov	r1, #256
+ 779              	.LVL42:
+  16:Src/lcd.c     ****     (interface->pinout[6]).port = LCD_D6_GPIO_Port;
+ 780              		.loc 1 16 32 view .LVU236
+ 781 0014 8020     		movs	r0, #128
+  10:Src/lcd.c     ****     (interface->pinout[3]).port = LCD_D3_GPIO_Port;
+ 782              		.loc 1 10 32 view .LVU237
+ 783 0016 A282     		strh	r2, [r4, #20]	@ movhi
+  14:Src/lcd.c     ****     (interface->pinout[5]).port = LCD_D5_GPIO_Port;
+ 784              		.loc 1 14 32 view .LVU238
+ 785 0018 A384     		strh	r3, [r4, #36]	@ movhi
+  20:Src/lcd.c     ****     (interface->pinout[8]).port = LCD_RW_GPIO_Port;
+ 786              		.loc 1 20 32 view .LVU239
+ 787 001a 4FF40072 		mov	r2, #512
+  22:Src/lcd.c     ****     (interface->pinout[9]).port = LCD_RS_GPIO_Port;
+ 788              		.loc 1 22 32 view .LVU240
+ 789 001e 0223     		movs	r3, #2
+   8:Src/lcd.c     ****     (interface->pinout[2]).port = LCD_D2_GPIO_Port;
+ 790              		.loc 1 8 32 view .LVU241
+ 791 0020 A681     		strh	r6, [r4, #12]	@ movhi
+  16:Src/lcd.c     ****     (interface->pinout[6]).port = LCD_D6_GPIO_Port;
+ 792              		.loc 1 16 32 view .LVU242
+ 793 0022 A085     		strh	r0, [r4, #44]	@ movhi
+  18:Src/lcd.c     ****     (interface->pinout[7]).port = LCD_D7_GPIO_Port;
+ 794              		.loc 1 18 32 view .LVU243
+ 795 0024 A186     		strh	r1, [r4, #52]	@ movhi
+  24:Src/lcd.c     ****     (interface->pinout[10]).port = LCD_E_GPIO_Port;
+ 796              		.loc 1 24 32 view .LVU244
+ 797 0026 0120     		movs	r0, #1
+  26:Src/lcd.c     ****     interface->data = 0;
+ 798              		.loc 1 26 33 view .LVU245
+ 799 0028 4FF40061 		mov	r1, #2048
+  20:Src/lcd.c     ****     (interface->pinout[8]).port = LCD_RW_GPIO_Port;
+ 800              		.loc 1 20 32 view .LVU246
+ 801 002c A287     		strh	r2, [r4, #60]	@ movhi
+  22:Src/lcd.c     ****     (interface->pinout[9]).port = LCD_RS_GPIO_Port;
+ 802              		.loc 1 22 32 view .LVU247
+ 803 002e A4F84430 		strh	r3, [r4, #68]	@ movhi
+ARM GAS  /tmp/ccl2tiOX.s 			page 21
+
+
+  27:Src/lcd.c     **** }
+ 804              		.loc 1 27 21 view .LVU248
+ 805 0032 0022     		movs	r2, #0
+   5:Src/lcd.c     ****     (interface->pinout[0]).pin = LCD_D0_Pin;
+ 806              		.loc 1 5 33 view .LVU249
+ 807 0034 324B     		ldr	r3, .L41
+  24:Src/lcd.c     ****     (interface->pinout[10]).port = LCD_E_GPIO_Port;
+ 808              		.loc 1 24 32 view .LVU250
+ 809 0036 A4F84C00 		strh	r0, [r4, #76]	@ movhi
+  12:Src/lcd.c     ****     (interface->pinout[4]).port = LCD_D4_GPIO_Port;
+ 810              		.loc 1 12 32 view .LVU251
+ 811 003a 2026     		movs	r6, #32
+  26:Src/lcd.c     ****     interface->data = 0;
+ 812              		.loc 1 26 33 view .LVU252
+ 813 003c A4F85410 		strh	r1, [r4, #84]	@ movhi
+  27:Src/lcd.c     **** }
+ 814              		.loc 1 27 21 view .LVU253
+ 815 0040 84F85A20 		strb	r2, [r4, #90]
+   5:Src/lcd.c     ****     (interface->pinout[0]).pin = LCD_D0_Pin;
+ 816              		.loc 1 5 33 view .LVU254
+ 817 0044 2360     		str	r3, [r4]
+   6:Src/lcd.c     ****     (interface->pinout[1]).port = LCD_D1_GPIO_Port;
+ 818              		.loc 1 6 5 is_stmt 1 view .LVU255
+   7:Src/lcd.c     ****     (interface->pinout[1]).pin = LCD_D1_Pin;
+ 819              		.loc 1 7 5 view .LVU256
+   7:Src/lcd.c     ****     (interface->pinout[1]).pin = LCD_D1_Pin;
+ 820              		.loc 1 7 33 is_stmt 0 view .LVU257
+ 821 0046 A360     		str	r3, [r4, #8]
+   8:Src/lcd.c     ****     (interface->pinout[2]).port = LCD_D2_GPIO_Port;
+ 822              		.loc 1 8 5 is_stmt 1 view .LVU258
+   9:Src/lcd.c     ****     (interface->pinout[2]).pin = LCD_D2_Pin;
+ 823              		.loc 1 9 5 view .LVU259
+   9:Src/lcd.c     ****     (interface->pinout[2]).pin = LCD_D2_Pin;
+ 824              		.loc 1 9 33 is_stmt 0 view .LVU260
+ 825 0048 2361     		str	r3, [r4, #16]
+  10:Src/lcd.c     ****     (interface->pinout[3]).port = LCD_D3_GPIO_Port;
+ 826              		.loc 1 10 5 is_stmt 1 view .LVU261
+  11:Src/lcd.c     ****     (interface->pinout[3]).pin = LCD_D3_Pin;
+ 827              		.loc 1 11 5 view .LVU262
+  11:Src/lcd.c     ****     (interface->pinout[3]).pin = LCD_D3_Pin;
+ 828              		.loc 1 11 33 is_stmt 0 view .LVU263
+ 829 004a A361     		str	r3, [r4, #24]
+  12:Src/lcd.c     ****     (interface->pinout[4]).port = LCD_D4_GPIO_Port;
+ 830              		.loc 1 12 5 is_stmt 1 view .LVU264
+  13:Src/lcd.c     ****     (interface->pinout[4]).pin = LCD_D4_Pin;
+ 831              		.loc 1 13 33 is_stmt 0 view .LVU265
+ 832 004c 2362     		str	r3, [r4, #32]
+  15:Src/lcd.c     ****     (interface->pinout[5]).pin = LCD_D5_Pin;
+ 833              		.loc 1 15 33 view .LVU266
+ 834 004e A362     		str	r3, [r4, #40]
+  17:Src/lcd.c     ****     (interface->pinout[6]).pin = LCD_D6_Pin;
+ 835              		.loc 1 17 33 view .LVU267
+ 836 0050 2363     		str	r3, [r4, #48]
+  19:Src/lcd.c     ****     (interface->pinout[7]).pin = LCD_D7_Pin;
+ 837              		.loc 1 19 33 view .LVU268
+ 838 0052 A363     		str	r3, [r4, #56]
+  21:Src/lcd.c     ****     (interface->pinout[8]).pin = LCD_RW_Pin;
+ARM GAS  /tmp/ccl2tiOX.s 			page 22
+
+
+ 839              		.loc 1 21 33 view .LVU269
+ 840 0054 2364     		str	r3, [r4, #64]
+  23:Src/lcd.c     ****     (interface->pinout[9]).pin = LCD_RS_Pin;
+ 841              		.loc 1 23 33 view .LVU270
+ 842 0056 A364     		str	r3, [r4, #72]
+  25:Src/lcd.c     ****     (interface->pinout[10]).pin = LCD_E_Pin;
+ 843              		.loc 1 25 34 view .LVU271
+ 844 0058 2365     		str	r3, [r4, #80]
+ 845              	.LBE56:
+ 846              	.LBE58:
  102:Src/lcd.c     ****     InstructionFunctionSetStart(interface, config);
- 649              		.loc 1 102 0
- 650 000a 1420     		movs	r0, #20
- 651 000c FFF7FEFF 		bl	HAL_Delay
- 652              	.LVL51:
+ 847              		.loc 1 102 5 view .LVU272
+ 848 005a 1420     		movs	r0, #20
+ 849              	.LBB59:
+ 850              	.LBB57:
+  12:Src/lcd.c     ****     (interface->pinout[4]).port = LCD_D4_GPIO_Port;
+ 851              		.loc 1 12 32 view .LVU273
+ 852 005c A683     		strh	r6, [r4, #28]	@ movhi
+  13:Src/lcd.c     ****     (interface->pinout[4]).pin = LCD_D4_Pin;
+ 853              		.loc 1 13 5 is_stmt 1 view .LVU274
+  14:Src/lcd.c     ****     (interface->pinout[5]).port = LCD_D5_GPIO_Port;
+ 854              		.loc 1 14 5 view .LVU275
+  15:Src/lcd.c     ****     (interface->pinout[5]).pin = LCD_D5_Pin;
+ 855              		.loc 1 15 5 view .LVU276
+  16:Src/lcd.c     ****     (interface->pinout[6]).port = LCD_D6_GPIO_Port;
+ 856              		.loc 1 16 5 view .LVU277
+  17:Src/lcd.c     ****     (interface->pinout[6]).pin = LCD_D6_Pin;
+ 857              		.loc 1 17 5 view .LVU278
+  18:Src/lcd.c     ****     (interface->pinout[7]).port = LCD_D7_GPIO_Port;
+ 858              		.loc 1 18 5 view .LVU279
+  19:Src/lcd.c     ****     (interface->pinout[7]).pin = LCD_D7_Pin;
+ 859              		.loc 1 19 5 view .LVU280
+  20:Src/lcd.c     ****     (interface->pinout[8]).port = LCD_RW_GPIO_Port;
+ 860              		.loc 1 20 5 view .LVU281
+  21:Src/lcd.c     ****     (interface->pinout[8]).pin = LCD_RW_Pin;
+ 861              		.loc 1 21 5 view .LVU282
+  22:Src/lcd.c     ****     (interface->pinout[9]).port = LCD_RS_GPIO_Port;
+ 862              		.loc 1 22 5 view .LVU283
+  23:Src/lcd.c     ****     (interface->pinout[9]).pin = LCD_RS_Pin;
+ 863              		.loc 1 23 5 view .LVU284
+  24:Src/lcd.c     ****     (interface->pinout[10]).port = LCD_E_GPIO_Port;
+ 864              		.loc 1 24 5 view .LVU285
+  25:Src/lcd.c     ****     (interface->pinout[10]).pin = LCD_E_Pin;
+ 865              		.loc 1 25 5 view .LVU286
+  26:Src/lcd.c     ****     interface->data = 0;
+ 866              		.loc 1 26 5 view .LVU287
+  27:Src/lcd.c     **** }
+ 867              		.loc 1 27 5 view .LVU288
+ 868              	.LVL43:
+  27:Src/lcd.c     **** }
+ 869              		.loc 1 27 5 is_stmt 0 view .LVU289
+ 870              	.LBE57:
+ 871              	.LBE59:
+ 102:Src/lcd.c     ****     InstructionFunctionSetStart(interface, config);
+ 872              		.loc 1 102 5 is_stmt 1 view .LVU290
+ 873 005e FFF7FEFF 		bl	HAL_Delay
+ 874              	.LVL44:
+ARM GAS  /tmp/ccl2tiOX.s 			page 23
+
+
  103:Src/lcd.c     ****     HAL_Delay(1);
- 653              		.loc 1 103 0
- 654 0010 2946     		mov	r1, r5
- 655 0012 2046     		mov	r0, r4
- 656 0014 FFF7FEFF 		bl	InstructionFunctionSetStart
- 657              	.LVL52:
+ 875              		.loc 1 103 5 view .LVU291
+ 876              	.LBB60:
+ 877              	.LBI60:
+  66:Src/lcd.c     ****     int i;
+ 878              		.loc 1 66 6 view .LVU292
+ 879              	.LBB61:
+  67:Src/lcd.c     ****     InstructionFunctionSet(interface, config);
+ 880              		.loc 1 67 5 view .LVU293
+  68:Src/lcd.c     ****     HAL_Delay(5);
+ 881              		.loc 1 68 5 view .LVU294
+ 882              	.LBB62:
+ 883              	.LBI62:
+  60:Src/lcd.c     ****     interface->instruction = FUNCTIONSET;
+ 884              		.loc 1 60 6 view .LVU295
+ 885              	.LBB63:
+  61:Src/lcd.c     ****     interface->data = (char)config[5]<<4|config[6]<<3|config[7]<<2;
+ 886              		.loc 1 61 5 view .LVU296
+  61:Src/lcd.c     ****     interface->data = (char)config[5]<<4|config[6]<<3|config[7]<<2;
+ 887              		.loc 1 61 28 is_stmt 0 view .LVU297
+ 888 0062 A4F85860 		strh	r6, [r4, #88]	@ movhi
+  62:Src/lcd.c     ****     LCDSendInstruction(interface);
+ 889              		.loc 1 62 5 is_stmt 1 view .LVU298
+  62:Src/lcd.c     ****     LCDSendInstruction(interface);
+ 890              		.loc 1 62 48 is_stmt 0 view .LVU299
+ 891 0066 AB79     		ldrb	r3, [r5, #6]	@ zero_extendqisi2
+  62:Src/lcd.c     ****     LCDSendInstruction(interface);
+ 892              		.loc 1 62 35 view .LVU300
+ 893 0068 6979     		ldrb	r1, [r5, #5]	@ zero_extendqisi2
+  62:Src/lcd.c     ****     LCDSendInstruction(interface);
+ 894              		.loc 1 62 61 view .LVU301
+ 895 006a EA79     		ldrb	r2, [r5, #7]	@ zero_extendqisi2
+  62:Src/lcd.c     ****     LCDSendInstruction(interface);
+ 896              		.loc 1 62 51 view .LVU302
+ 897 006c DB00     		lsls	r3, r3, #3
+  62:Src/lcd.c     ****     LCDSendInstruction(interface);
+ 898              		.loc 1 62 41 view .LVU303
+ 899 006e 43EA0113 		orr	r3, r3, r1, lsl #4
+  62:Src/lcd.c     ****     LCDSendInstruction(interface);
+ 900              		.loc 1 62 54 view .LVU304
+ 901 0072 43EA8203 		orr	r3, r3, r2, lsl #2
+  62:Src/lcd.c     ****     LCDSendInstruction(interface);
+ 902              		.loc 1 62 21 view .LVU305
+ 903 0076 84F85A30 		strb	r3, [r4, #90]
+  63:Src/lcd.c     **** }
+ 904              		.loc 1 63 5 is_stmt 1 view .LVU306
+ 905 007a 2046     		mov	r0, r4
+ 906 007c FFF7FEFF 		bl	LCDSendInstruction
+ 907              	.LVL45:
+  63:Src/lcd.c     **** }
+ 908              		.loc 1 63 5 is_stmt 0 view .LVU307
+ 909              	.LBE63:
+ 910              	.LBE62:
+  69:Src/lcd.c     **** 
+ 911              		.loc 1 69 5 is_stmt 1 view .LVU308
+ 912 0080 0520     		movs	r0, #5
+ 913 0082 FFF7FEFF 		bl	HAL_Delay
+ARM GAS  /tmp/ccl2tiOX.s 			page 24
+
+
+ 914              	.LVL46:
+  71:Src/lcd.c     ****         InstructionFunctionSet(interface, config);
+ 915              		.loc 1 71 5 view .LVU309
+  69:Src/lcd.c     **** 
+ 916              		.loc 1 69 5 is_stmt 0 view .LVU310
+ 917 0086 0327     		movs	r7, #3
+ 918              	.LVL47:
+ 919              	.L38:
+  72:Src/lcd.c     ****         HAL_Delay(1);
+ 920              		.loc 1 72 9 is_stmt 1 view .LVU311
+ 921              	.LBB64:
+ 922              	.LBI64:
+  60:Src/lcd.c     ****     interface->instruction = FUNCTIONSET;
+ 923              		.loc 1 60 6 view .LVU312
+ 924              	.LBB65:
+  61:Src/lcd.c     ****     interface->data = (char)config[5]<<4|config[6]<<3|config[7]<<2;
+ 925              		.loc 1 61 5 view .LVU313
+  61:Src/lcd.c     ****     interface->data = (char)config[5]<<4|config[6]<<3|config[7]<<2;
+ 926              		.loc 1 61 28 is_stmt 0 view .LVU314
+ 927 0088 A4F85860 		strh	r6, [r4, #88]	@ movhi
+  62:Src/lcd.c     ****     LCDSendInstruction(interface);
+ 928              		.loc 1 62 5 is_stmt 1 view .LVU315
+  62:Src/lcd.c     ****     LCDSendInstruction(interface);
+ 929              		.loc 1 62 48 is_stmt 0 view .LVU316
+ 930 008c AB79     		ldrb	r3, [r5, #6]	@ zero_extendqisi2
+  62:Src/lcd.c     ****     LCDSendInstruction(interface);
+ 931              		.loc 1 62 35 view .LVU317
+ 932 008e 6979     		ldrb	r1, [r5, #5]	@ zero_extendqisi2
+  62:Src/lcd.c     ****     LCDSendInstruction(interface);
+ 933              		.loc 1 62 61 view .LVU318
+ 934 0090 EA79     		ldrb	r2, [r5, #7]	@ zero_extendqisi2
+  62:Src/lcd.c     ****     LCDSendInstruction(interface);
+ 935              		.loc 1 62 51 view .LVU319
+ 936 0092 DB00     		lsls	r3, r3, #3
+  62:Src/lcd.c     ****     LCDSendInstruction(interface);
+ 937              		.loc 1 62 41 view .LVU320
+ 938 0094 43EA0113 		orr	r3, r3, r1, lsl #4
+  62:Src/lcd.c     ****     LCDSendInstruction(interface);
+ 939              		.loc 1 62 54 view .LVU321
+ 940 0098 43EA8203 		orr	r3, r3, r2, lsl #2
+  62:Src/lcd.c     ****     LCDSendInstruction(interface);
+ 941              		.loc 1 62 21 view .LVU322
+ 942 009c 84F85A30 		strb	r3, [r4, #90]
+  63:Src/lcd.c     **** }
+ 943              		.loc 1 63 5 is_stmt 1 view .LVU323
+ 944 00a0 2046     		mov	r0, r4
+ 945 00a2 FFF7FEFF 		bl	LCDSendInstruction
+ 946              	.LVL48:
+  63:Src/lcd.c     **** }
+ 947              		.loc 1 63 5 is_stmt 0 view .LVU324
+ 948              	.LBE65:
+ 949              	.LBE64:
+  73:Src/lcd.c     ****     }
+ 950              		.loc 1 73 9 is_stmt 1 view .LVU325
+ 951 00a6 0120     		movs	r0, #1
+ 952 00a8 FFF7FEFF 		bl	HAL_Delay
+ 953              	.LVL49:
+ARM GAS  /tmp/ccl2tiOX.s 			page 25
+
+
+  71:Src/lcd.c     ****         InstructionFunctionSet(interface, config);
+ 954              		.loc 1 71 5 is_stmt 0 view .LVU326
+ 955 00ac 013F     		subs	r7, r7, #1
+ 956 00ae EBD1     		bne	.L38
+ 957              	.LVL50:
+  71:Src/lcd.c     ****         InstructionFunctionSet(interface, config);
+ 958              		.loc 1 71 5 view .LVU327
+ 959              	.LBE61:
+ 960              	.LBE60:
  104:Src/lcd.c     ****     InstructionDisplay(interface, config);
- 658              		.loc 1 104 0
- 659 0018 0120     		movs	r0, #1
- 660 001a FFF7FEFF 		bl	HAL_Delay
- 661              	.LVL53:
+ 961              		.loc 1 104 5 is_stmt 1 view .LVU328
+ 962 00b0 0120     		movs	r0, #1
+ 963 00b2 FFF7FEFF 		bl	HAL_Delay
+ 964              	.LVL51:
  105:Src/lcd.c     ****     HAL_Delay(1);
- 662              		.loc 1 105 0
- 663 001e 2946     		mov	r1, r5
- 664 0020 2046     		mov	r0, r4
- 665 0022 FFF7FEFF 		bl	InstructionDisplay
- 666              	.LVL54:
+ 965              		.loc 1 105 5 view .LVU329
+ 966              	.LBB66:
+ 967              	.LBI66:
+  77:Src/lcd.c     ****     interface->instruction = DISPLAY;
+ 968              		.loc 1 77 6 view .LVU330
+ 969              	.LBB67:
+  78:Src/lcd.c     ****     interface->data = (char)config[2]<<2|config[3]<<1|config[4]<<0;
+ 970              		.loc 1 78 5 view .LVU331
+  78:Src/lcd.c     ****     interface->data = (char)config[2]<<2|config[3]<<1|config[4]<<0;
+ 971              		.loc 1 78 28 is_stmt 0 view .LVU332
+ 972 00b6 0823     		movs	r3, #8
+ 973 00b8 A4F85830 		strh	r3, [r4, #88]	@ movhi
+  79:Src/lcd.c     ****     LCDSendInstruction(interface);
+ 974              		.loc 1 79 5 is_stmt 1 view .LVU333
+  79:Src/lcd.c     ****     LCDSendInstruction(interface);
+ 975              		.loc 1 79 48 is_stmt 0 view .LVU334
+ 976 00bc EB78     		ldrb	r3, [r5, #3]	@ zero_extendqisi2
+  79:Src/lcd.c     ****     LCDSendInstruction(interface);
+ 977              		.loc 1 79 35 view .LVU335
+ 978 00be A978     		ldrb	r1, [r5, #2]	@ zero_extendqisi2
+  79:Src/lcd.c     ****     LCDSendInstruction(interface);
+ 979              		.loc 1 79 54 view .LVU336
+ 980 00c0 2A79     		ldrb	r2, [r5, #4]	@ zero_extendqisi2
+  79:Src/lcd.c     ****     LCDSendInstruction(interface);
+ 981              		.loc 1 79 51 view .LVU337
+ 982 00c2 5B00     		lsls	r3, r3, #1
+  79:Src/lcd.c     ****     LCDSendInstruction(interface);
+ 983              		.loc 1 79 41 view .LVU338
+ 984 00c4 43EA8103 		orr	r3, r3, r1, lsl #2
+  79:Src/lcd.c     ****     LCDSendInstruction(interface);
+ 985              		.loc 1 79 54 view .LVU339
+ 986 00c8 1343     		orrs	r3, r3, r2
+  79:Src/lcd.c     ****     LCDSendInstruction(interface);
+ 987              		.loc 1 79 21 view .LVU340
+ 988 00ca 84F85A30 		strb	r3, [r4, #90]
+  80:Src/lcd.c     **** }
+ 989              		.loc 1 80 5 is_stmt 1 view .LVU341
+ 990              	.LBE67:
+ 991              	.LBE66:
+ 992              	.LBB69:
+ 993              	.LBB70:
+  90:Src/lcd.c     ****     interface->data = 0;
+ARM GAS  /tmp/ccl2tiOX.s 			page 26
+
+
+ 994              		.loc 1 90 28 is_stmt 0 view .LVU342
+ 995 00ce 0125     		movs	r5, #1
+ 996              	.LVL52:
+  90:Src/lcd.c     ****     interface->data = 0;
+ 997              		.loc 1 90 28 view .LVU343
+ 998              	.LBE70:
+ 999              	.LBE69:
+ 1000              	.LBB72:
+ 1001              	.LBB68:
+  80:Src/lcd.c     **** }
+ 1002              		.loc 1 80 5 view .LVU344
+ 1003 00d0 2046     		mov	r0, r4
+ 1004 00d2 FFF7FEFF 		bl	LCDSendInstruction
+ 1005              	.LVL53:
+  80:Src/lcd.c     **** }
+ 1006              		.loc 1 80 5 view .LVU345
+ 1007              	.LBE68:
+ 1008              	.LBE72:
  106:Src/lcd.c     ****     InstructionClearDisplay(interface);
- 667              		.loc 1 106 0
- 668 0026 0120     		movs	r0, #1
- 669 0028 FFF7FEFF 		bl	HAL_Delay
- 670              	.LVL55:
+ 1009              		.loc 1 106 5 is_stmt 1 view .LVU346
+ 1010 00d6 2846     		mov	r0, r5
+ 1011 00d8 FFF7FEFF 		bl	HAL_Delay
+ 1012              	.LVL54:
  107:Src/lcd.c     ****     HAL_Delay(1);
- 671              		.loc 1 107 0
- 672 002c 2046     		mov	r0, r4
- 673 002e FFF7FEFF 		bl	InstructionClearDisplay
- 674              	.LVL56:
+ 1013              		.loc 1 107 5 view .LVU347
+ 1014              	.LBB73:
+ 1015              	.LBI69:
+  89:Src/lcd.c     ****     interface->instruction = CLEARDISPLAY;
+ 1016              		.loc 1 89 6 view .LVU348
+ 1017              	.LBB71:
+  90:Src/lcd.c     ****     interface->data = 0;
+ 1018              		.loc 1 90 5 view .LVU349
+  92:Src/lcd.c     **** }
+ 1019              		.loc 1 92 5 is_stmt 0 view .LVU350
+ 1020 00dc 2046     		mov	r0, r4
+  91:Src/lcd.c     ****     LCDSendInstruction(interface);
+ 1021              		.loc 1 91 21 view .LVU351
+ 1022 00de 84F85A70 		strb	r7, [r4, #90]
+  90:Src/lcd.c     ****     interface->data = 0;
+ 1023              		.loc 1 90 28 view .LVU352
+ 1024 00e2 A4F85850 		strh	r5, [r4, #88]	@ movhi
+  91:Src/lcd.c     ****     LCDSendInstruction(interface);
+ 1025              		.loc 1 91 5 is_stmt 1 view .LVU353
+  92:Src/lcd.c     **** }
+ 1026              		.loc 1 92 5 view .LVU354
+ 1027 00e6 FFF7FEFF 		bl	LCDSendInstruction
+ 1028              	.LVL55:
+  92:Src/lcd.c     **** }
+ 1029              		.loc 1 92 5 is_stmt 0 view .LVU355
+ 1030              	.LBE71:
+ 1031              	.LBE73:
  108:Src/lcd.c     ****     InstructionReturnHome(interface);
- 675              		.loc 1 108 0
- 676 0032 0120     		movs	r0, #1
- 677 0034 FFF7FEFF 		bl	HAL_Delay
- 678              	.LVL57:
+ 1032              		.loc 1 108 5 is_stmt 1 view .LVU356
+ 1033 00ea 2846     		mov	r0, r5
+ 1034 00ec FFF7FEFF 		bl	HAL_Delay
+ 1035              	.LVL56:
  109:Src/lcd.c     **** }
-ARM GAS  /tmp/ccXyJqFc.s 			page 16
+ARM GAS  /tmp/ccl2tiOX.s 			page 27
 
 
- 679              		.loc 1 109 0
- 680 0038 2046     		mov	r0, r4
- 681 003a FFF7FEFF 		bl	InstructionReturnHome
- 682              	.LVL58:
- 683 003e 38BD     		pop	{r3, r4, r5, pc}
- 684              		.cfi_endproc
- 685              	.LFE134:
- 687              		.section	.text.InstructionCurseurPosition,"ax",%progbits
- 688              		.align	2
- 689              		.global	InstructionCurseurPosition
- 690              		.thumb
- 691              		.thumb_func
- 693              	InstructionCurseurPosition:
- 694              	.LFB135:
+ 1036              		.loc 1 109 5 view .LVU357
+ 1037              	.LBB74:
+ 1038              	.LBI74:
+  95:Src/lcd.c     ****     interface->instruction = RETURNHOME;
+ 1039              		.loc 1 95 6 view .LVU358
+ 1040              	.LBB75:
+  96:Src/lcd.c     ****     LCDSendInstruction(interface);
+ 1041              		.loc 1 96 5 view .LVU359
+  96:Src/lcd.c     ****     LCDSendInstruction(interface);
+ 1042              		.loc 1 96 28 is_stmt 0 view .LVU360
+ 1043 00f0 0223     		movs	r3, #2
+ 1044 00f2 A4F85830 		strh	r3, [r4, #88]	@ movhi
+  97:Src/lcd.c     **** }
+ 1045              		.loc 1 97 5 is_stmt 1 view .LVU361
+ 1046 00f6 2046     		mov	r0, r4
+ 1047              	.LBE75:
+ 1048              	.LBE74:
+ 110:Src/lcd.c     **** 
+ 1049              		.loc 1 110 1 is_stmt 0 view .LVU362
+ 1050 00f8 BDE8F840 		pop	{r3, r4, r5, r6, r7, lr}
+ 1051              	.LCFI13:
+ 1052              		.cfi_restore 14
+ 1053              		.cfi_restore 7
+ 1054              		.cfi_restore 6
+ 1055              		.cfi_restore 5
+ 1056              		.cfi_restore 4
+ 1057              		.cfi_restore 3
+ 1058              		.cfi_def_cfa_offset 0
+ 1059              	.LVL57:
+ 1060              	.LBB77:
+ 1061              	.LBB76:
+  97:Src/lcd.c     **** }
+ 1062              		.loc 1 97 5 view .LVU363
+ 1063 00fc FFF7FEBF 		b	LCDSendInstruction
+ 1064              	.LVL58:
+ 1065              	.L42:
+  97:Src/lcd.c     **** }
+ 1066              		.loc 1 97 5 view .LVU364
+ 1067              		.align	2
+ 1068              	.L41:
+ 1069 0100 00080240 		.word	1073874944
+ 1070              	.LBE76:
+ 1071              	.LBE77:
+ 1072              		.cfi_endproc
+ 1073              	.LFE136:
+ 1075              		.section	.text.InstructionCurseurPosition,"ax",%progbits
+ 1076              		.align	1
+ 1077              		.p2align 2,,3
+ 1078              		.global	InstructionCurseurPosition
+ 1079              		.syntax unified
+ 1080              		.thumb
+ 1081              		.thumb_func
+ 1082              		.fpu fpv4-sp-d16
+ 1084              	InstructionCurseurPosition:
+ 1085              	.LVL59:
+ 1086              	.LFB137:
  112:Src/lcd.c     ****     interface->instruction = SETDDRAM;
- 695              		.loc 1 112 0
- 696              		.cfi_startproc
- 697              		@ args = 0, pretend = 0, frame = 0
- 698              		@ frame_needed = 0, uses_anonymous_args = 0
- 699              	.LVL59:
- 700 0000 08B5     		push	{r3, lr}
- 701              	.LCFI16:
- 702              		.cfi_def_cfa_offset 8
- 703              		.cfi_offset 3, -8
- 704              		.cfi_offset 14, -4
+ARM GAS  /tmp/ccl2tiOX.s 			page 28
+
+
+ 1087              		.loc 1 112 69 is_stmt 1 view -0
+ 1088              		.cfi_startproc
+ 1089              		@ args = 0, pretend = 0, frame = 0
+ 1090              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1091              		@ link register save eliminated.
  113:Src/lcd.c     ****     interface->data = ddram;
- 705              		.loc 1 113 0
- 706 0002 4022     		movs	r2, #64
- 707 0004 A0F85820 		strh	r2, [r0, #88]	@ movhi
+ 1092              		.loc 1 113 5 view .LVU366
+ 113:Src/lcd.c     ****     interface->data = ddram;
+ 1093              		.loc 1 113 28 is_stmt 0 view .LVU367
+ 1094 0000 4022     		movs	r2, #64
  114:Src/lcd.c     ****     LCDSendInstruction(interface);
- 708              		.loc 1 114 0
- 709 0008 80F85A10 		strb	r1, [r0, #90]
+ 1095              		.loc 1 114 21 view .LVU368
+ 1096 0002 80F85A10 		strb	r1, [r0, #90]
+ 113:Src/lcd.c     ****     interface->data = ddram;
+ 1097              		.loc 1 113 28 view .LVU369
+ 1098 0006 A0F85820 		strh	r2, [r0, #88]	@ movhi
+ 114:Src/lcd.c     ****     LCDSendInstruction(interface);
+ 1099              		.loc 1 114 5 is_stmt 1 view .LVU370
  115:Src/lcd.c     **** }
- 710              		.loc 1 115 0
- 711 000c FFF7FEFF 		bl	LCDSendInstruction
- 712              	.LVL60:
- 713 0010 08BD     		pop	{r3, pc}
- 714              		.cfi_endproc
- 715              	.LFE135:
- 717 0012 00BF     		.section	.text.CursorDisplayShift,"ax",%progbits
- 718              		.align	2
- 719              		.global	CursorDisplayShift
- 720              		.thumb
- 721              		.thumb_func
- 723              	CursorDisplayShift:
- 724              	.LFB138:
- 144:Src/lcd.c     **** }
- 145:Src/lcd.c     **** 
- 146:Src/lcd.c     **** void CursorDisplayShift(LCDInterface* interface, char config[10]){
- 725              		.loc 1 146 0
- 726              		.cfi_startproc
- 727              		@ args = 0, pretend = 0, frame = 0
- 728              		@ frame_needed = 0, uses_anonymous_args = 0
- 729              	.LVL61:
- 730 0000 10B5     		push	{r4, lr}
- 731              	.LCFI17:
- 732              		.cfi_def_cfa_offset 8
-ARM GAS  /tmp/ccXyJqFc.s 			page 17
+ 1100              		.loc 1 115 5 view .LVU371
+ 1101 000a FFF7FEBF 		b	LCDSendInstruction
+ 1102              	.LVL60:
+ 115:Src/lcd.c     **** }
+ 1103              		.loc 1 115 5 is_stmt 0 view .LVU372
+ 1104              		.cfi_endproc
+ 1105              	.LFE137:
+ 1107 000e 00BF     		.section	.text.PinChangeMode,"ax",%progbits
+ 1108              		.align	1
+ 1109              		.p2align 2,,3
+ 1110              		.global	PinChangeMode
+ 1111              		.syntax unified
+ 1112              		.thumb
+ 1113              		.thumb_func
+ 1114              		.fpu fpv4-sp-d16
+ 1116              	PinChangeMode:
+ 1117              	.LVL61:
+ 1118              	.LFB138:
+ 118:Src/lcd.c     ****     GPIO_InitTypeDef GPIO_InitStruct;
+ 1119              		.loc 1 118 69 is_stmt 1 view -0
+ 1120              		.cfi_startproc
+ 1121              		@ args = 0, pretend = 0, frame = 24
+ 1122              		@ frame_needed = 0, uses_anonymous_args = 0
+ 119:Src/lcd.c     ****     if(direction){
+ 1123              		.loc 1 119 5 view .LVU374
+ 120:Src/lcd.c     ****         GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+ 1124              		.loc 1 120 5 view .LVU375
+ 118:Src/lcd.c     ****     GPIO_InitTypeDef GPIO_InitStruct;
+ 1125              		.loc 1 118 69 is_stmt 0 view .LVU376
+ 1126 0000 10B5     		push	{r4, lr}
+ 1127              	.LCFI14:
+ 1128              		.cfi_def_cfa_offset 8
+ 1129              		.cfi_offset 4, -8
+ 1130              		.cfi_offset 14, -4
+ 120:Src/lcd.c     ****         GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+ 1131              		.loc 1 120 7 view .LVU377
+ 1132 0002 0032     		adds	r2, r2, #0
+ 1133              	.LVL62:
+ARM GAS  /tmp/ccl2tiOX.s 			page 29
 
 
- 733              		.cfi_offset 4, -8
- 734              		.cfi_offset 14, -4
- 147:Src/lcd.c     ****     interface->instruction = SHIFT;
- 735              		.loc 1 147 0
- 736 0002 1023     		movs	r3, #16
- 737 0004 A0F85830 		strh	r3, [r0, #88]	@ movhi
- 148:Src/lcd.c     ****     interface->data = (char)config[8]<<3|config[9]<<2;
- 738              		.loc 1 148 0
- 739 0008 0C7A     		ldrb	r4, [r1, #8]	@ zero_extendqisi2
- 740 000a 4B7A     		ldrb	r3, [r1, #9]	@ zero_extendqisi2
- 741 000c 9B00     		lsls	r3, r3, #2
- 742 000e 43EAC403 		orr	r3, r3, r4, lsl #3
- 743 0012 80F85A30 		strb	r3, [r0, #90]
- 149:Src/lcd.c     ****     LCDSendInstruction(interface);
- 744              		.loc 1 149 0
- 745 0016 FFF7FEFF 		bl	LCDSendInstruction
- 746              	.LVL62:
- 747 001a 10BD     		pop	{r4, pc}
- 748              		.cfi_endproc
- 749              	.LFE138:
- 751              		.section	.text.MoveScreen,"ax",%progbits
- 752              		.align	2
- 753              		.global	MoveScreen
- 754              		.thumb
- 755              		.thumb_func
- 757              	MoveScreen:
- 758              	.LFB139:
- 150:Src/lcd.c     **** }
- 151:Src/lcd.c     **** 
- 152:Src/lcd.c     **** void MoveScreen(LCDInterface* interface, char direction){
- 759              		.loc 1 152 0
- 760              		.cfi_startproc
- 761              		@ args = 0, pretend = 0, frame = 16
- 762              		@ frame_needed = 0, uses_anonymous_args = 0
- 763              	.LVL63:
- 764 0000 00B5     		push	{lr}
- 765              	.LCFI18:
- 766              		.cfi_def_cfa_offset 4
- 767              		.cfi_offset 14, -4
- 768 0002 85B0     		sub	sp, sp, #20
- 769              	.LCFI19:
- 770              		.cfi_def_cfa_offset 24
- 153:Src/lcd.c     ****     CursorDisplayShift(interface, (char[10]){0,0,0,0,0,0,0,0,1,direction});
- 771              		.loc 1 153 0
- 772 0004 0023     		movs	r3, #0
- 773 0006 8DF80430 		strb	r3, [sp, #4]
- 774 000a 8DF80530 		strb	r3, [sp, #5]
- 775 000e 8DF80630 		strb	r3, [sp, #6]
- 776 0012 8DF80730 		strb	r3, [sp, #7]
- 777 0016 8DF80830 		strb	r3, [sp, #8]
- 778 001a 8DF80930 		strb	r3, [sp, #9]
- 779 001e 8DF80A30 		strb	r3, [sp, #10]
- 780 0022 8DF80B30 		strb	r3, [sp, #11]
- 781 0026 0123     		movs	r3, #1
- 782 0028 8DF80C30 		strb	r3, [sp, #12]
- 783 002c 8DF80D10 		strb	r1, [sp, #13]
- 784 0030 01A9     		add	r1, sp, #4
-ARM GAS  /tmp/ccXyJqFc.s 			page 18
+ 118:Src/lcd.c     ****     GPIO_InitTypeDef GPIO_InitStruct;
+ 1134              		.loc 1 118 69 view .LVU378
+ 1135 0004 86B0     		sub	sp, sp, #24
+ 1136              	.LCFI15:
+ 1137              		.cfi_def_cfa_offset 32
+ 120:Src/lcd.c     ****         GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+ 1138              		.loc 1 120 7 view .LVU379
+ 1139 0006 18BF     		it	ne
+ 1140 0008 0122     		movne	r2, #1
+ 126:Src/lcd.c     ****     GPIO_InitStruct.Pin = pin;
+ 1141              		.loc 1 126 26 view .LVU380
+ 1142 000a 0023     		movs	r3, #0
+ 118:Src/lcd.c     ****     GPIO_InitTypeDef GPIO_InitStruct;
+ 1143              		.loc 1 118 69 view .LVU381
+ 1144 000c 0446     		mov	r4, r0
+ 127:Src/lcd.c     ****     HAL_GPIO_DeInit(port, pin);
+ 1145              		.loc 1 127 25 view .LVU382
+ 1146 000e CDE90112 		strd	r1, r2, [sp, #4]
+ 126:Src/lcd.c     ****     GPIO_InitStruct.Pin = pin;
+ 1147              		.loc 1 126 26 view .LVU383
+ 1148 0012 0393     		str	r3, [sp, #12]
+ 127:Src/lcd.c     ****     HAL_GPIO_DeInit(port, pin);
+ 1149              		.loc 1 127 5 is_stmt 1 view .LVU384
+ 128:Src/lcd.c     ****     HAL_GPIO_Init(port, &GPIO_InitStruct);
+ 1150              		.loc 1 128 5 view .LVU385
+ 1151 0014 FFF7FEFF 		bl	HAL_GPIO_DeInit
+ 1152              	.LVL63:
+ 129:Src/lcd.c     **** }
+ 1153              		.loc 1 129 5 view .LVU386
+ 1154 0018 2046     		mov	r0, r4
+ 1155 001a 01A9     		add	r1, sp, #4
+ 1156 001c FFF7FEFF 		bl	HAL_GPIO_Init
+ 1157              	.LVL64:
+ 130:Src/lcd.c     **** 
+ 1158              		.loc 1 130 1 is_stmt 0 view .LVU387
+ 1159 0020 06B0     		add	sp, sp, #24
+ 1160              	.LCFI16:
+ 1161              		.cfi_def_cfa_offset 8
+ 1162              		@ sp needed
+ 1163 0022 10BD     		pop	{r4, pc}
+ 130:Src/lcd.c     **** 
+ 1164              		.loc 1 130 1 view .LVU388
+ 1165              		.cfi_endproc
+ 1166              	.LFE138:
+ 1168              		.section	.text.WaitLCD,"ax",%progbits
+ 1169              		.align	1
+ 1170              		.p2align 2,,3
+ 1171              		.global	WaitLCD
+ 1172              		.syntax unified
+ 1173              		.thumb
+ 1174              		.thumb_func
+ 1175              		.fpu fpv4-sp-d16
+ 1177              	WaitLCD:
+ 1178              	.LVL65:
+ 1179              	.LFB139:
+ 133:Src/lcd.c     ****     HAL_GPIO_WritePin(interface->pinout[8].port,interface->pinout[8].pin,1);
+ 1180              		.loc 1 133 38 is_stmt 1 view -0
+ARM GAS  /tmp/ccl2tiOX.s 			page 30
 
 
- 785              	.LVL64:
- 786 0032 FFF7FEFF 		bl	CursorDisplayShift
- 787              	.LVL65:
- 154:Src/lcd.c     **** }
- 788              		.loc 1 154 0
- 789 0036 05B0     		add	sp, sp, #20
- 790              	.LCFI20:
- 791              		.cfi_def_cfa_offset 4
- 792              		@ sp needed
- 793 0038 5DF804FB 		ldr	pc, [sp], #4
- 794              		.cfi_endproc
- 795              	.LFE139:
- 797              		.section	.text.MoveCursor,"ax",%progbits
- 798              		.align	2
- 799              		.global	MoveCursor
- 800              		.thumb
- 801              		.thumb_func
- 803              	MoveCursor:
- 804              	.LFB140:
- 155:Src/lcd.c     **** 
- 156:Src/lcd.c     **** void MoveCursor(LCDInterface* interface, char direction){
- 805              		.loc 1 156 0
- 806              		.cfi_startproc
- 807              		@ args = 0, pretend = 0, frame = 16
- 808              		@ frame_needed = 0, uses_anonymous_args = 0
- 809              	.LVL66:
- 810 0000 00B5     		push	{lr}
- 811              	.LCFI21:
- 812              		.cfi_def_cfa_offset 4
- 813              		.cfi_offset 14, -4
- 814 0002 85B0     		sub	sp, sp, #20
- 815              	.LCFI22:
- 816              		.cfi_def_cfa_offset 24
- 157:Src/lcd.c     ****     CursorDisplayShift(interface, (char[10]){0,0,0,0,0,0,0,0,0,direction});
- 817              		.loc 1 157 0
- 818 0004 0023     		movs	r3, #0
- 819 0006 0193     		str	r3, [sp, #4]
- 820 0008 0293     		str	r3, [sp, #8]
- 821 000a ADF80C30 		strh	r3, [sp, #12]	@ movhi
- 822 000e 8DF80D10 		strb	r1, [sp, #13]
- 823 0012 01A9     		add	r1, sp, #4
- 824              	.LVL67:
- 825 0014 FFF7FEFF 		bl	CursorDisplayShift
- 826              	.LVL68:
- 158:Src/lcd.c     **** }...
- 827              		.loc 1 158 0
- 828 0018 05B0     		add	sp, sp, #20
- 829              	.LCFI23:
- 830              		.cfi_def_cfa_offset 4
- 831              		@ sp needed
- 832 001a 5DF804FB 		ldr	pc, [sp], #4
- 833              		.cfi_endproc
- 834              	.LFE140:
- 836 001e 00BF     		.text
- 837              	.Letext0:
- 838              		.file 2 "/usr/include/newlib/machine/_default_types.h"
- 839              		.file 3 "/usr/include/newlib/sys/_stdint.h"
-ARM GAS  /tmp/ccXyJqFc.s 			page 19
+ 1181              		.cfi_startproc
+ 1182              		@ args = 0, pretend = 0, frame = 0
+ 1183              		@ frame_needed = 0, uses_anonymous_args = 0
+ 134:Src/lcd.c     ****     HAL_GPIO_WritePin(interface->pinout[9].port,interface->pinout[9].pin,0);
+ 1184              		.loc 1 134 5 view .LVU390
+ 133:Src/lcd.c     ****     HAL_GPIO_WritePin(interface->pinout[8].port,interface->pinout[8].pin,1);
+ 1185              		.loc 1 133 38 is_stmt 0 view .LVU391
+ 1186 0000 10B5     		push	{r4, lr}
+ 1187              	.LCFI17:
+ 1188              		.cfi_def_cfa_offset 8
+ 1189              		.cfi_offset 4, -8
+ 1190              		.cfi_offset 14, -4
+ 133:Src/lcd.c     ****     HAL_GPIO_WritePin(interface->pinout[8].port,interface->pinout[8].pin,1);
+ 1191              		.loc 1 133 38 view .LVU392
+ 1192 0002 0446     		mov	r4, r0
+ 134:Src/lcd.c     ****     HAL_GPIO_WritePin(interface->pinout[9].port,interface->pinout[9].pin,0);
+ 1193              		.loc 1 134 5 view .LVU393
+ 1194 0004 B0F84410 		ldrh	r1, [r0, #68]
+ 1195 0008 006C     		ldr	r0, [r0, #64]
+ 1196              	.LVL66:
+ 134:Src/lcd.c     ****     HAL_GPIO_WritePin(interface->pinout[9].port,interface->pinout[9].pin,0);
+ 1197              		.loc 1 134 5 view .LVU394
+ 1198 000a 0122     		movs	r2, #1
+ 1199 000c FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 1200              	.LVL67:
+ 135:Src/lcd.c     ****     HAL_Delay(10);
+ 1201              		.loc 1 135 5 is_stmt 1 view .LVU395
+ 1202 0010 A06C     		ldr	r0, [r4, #72]
+ 1203 0012 B4F84C10 		ldrh	r1, [r4, #76]
+ 1204 0016 0022     		movs	r2, #0
+ 1205 0018 FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 1206              	.LVL68:
+ 1207              		.loc 1 136 5 view .LVU396
+ 1208 001c 0A20     		movs	r0, #10
+ 137:Src/lcd.c     **** }
+ 1209              		.loc 1 137 1 is_stmt 0 view .LVU397
+ 1210 001e BDE81040 		pop	{r4, lr}
+ 1211              	.LCFI18:
+ 1212              		.cfi_restore 14
+ 1213              		.cfi_restore 4
+ 1214              		.cfi_def_cfa_offset 0
+ 1215              	.LVL69:
+ 136:Src/lcd.c     **** }
+ 1216              		.loc 1 136 5 view .LVU398
+ 1217 0022 FFF7FEBF 		b	HAL_Delay
+ 1218              	.LVL70:
+ 1219              		.cfi_endproc
+ 1220              	.LFE139:
+ 1222 0026 00BF     		.section	.text.CursorDisplayShift,"ax",%progbits
+ 1223              		.align	1
+ 1224              		.p2align 2,,3
+ 1225              		.global	CursorDisplayShift
+ 1226              		.syntax unified
+ 1227              		.thumb
+ 1228              		.thumb_func
+ 1229              		.fpu fpv4-sp-d16
+ 1231              	CursorDisplayShift:
+ARM GAS  /tmp/ccl2tiOX.s 			page 31
 
 
- 840              		.file 4 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f401xe.h"
- 841              		.file 5 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h"
- 842              		.file 6 "Inc/lcd.h"
- 843              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
- 844              		.file 8 "Drivers/CMSIS/Include/core_cm4.h"
-ARM GAS  /tmp/ccXyJqFc.s 			page 20
+ 1232              	.LVL71:
+ 1233              	.LFB140:
+ 138:Src/lcd.c     **** 
+ 139:Src/lcd.c     **** void CursorDisplayShift(LCDInterface* interface, char config[10]){
+ 1234              		.loc 1 139 66 is_stmt 1 view -0
+ 1235              		.cfi_startproc
+ 1236              		@ args = 0, pretend = 0, frame = 0
+ 1237              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1238              		@ link register save eliminated.
+ 140:Src/lcd.c     ****     interface->instruction = SHIFT;
+ 1239              		.loc 1 140 5 view .LVU400
+ 1240              		.loc 1 140 28 is_stmt 0 view .LVU401
+ 1241 0000 1023     		movs	r3, #16
+ 1242 0002 A0F85830 		strh	r3, [r0, #88]	@ movhi
+ 141:Src/lcd.c     ****     interface->data = (char)config[8]<<3|config[9]<<2;
+ 1243              		.loc 1 141 5 is_stmt 1 view .LVU402
+ 1244              		.loc 1 141 48 is_stmt 0 view .LVU403
+ 1245 0006 4B7A     		ldrb	r3, [r1, #9]	@ zero_extendqisi2
+ 1246              		.loc 1 141 35 view .LVU404
+ 1247 0008 097A     		ldrb	r1, [r1, #8]	@ zero_extendqisi2
+ 1248              	.LVL72:
+ 1249              		.loc 1 141 51 view .LVU405
+ 1250 000a 9B00     		lsls	r3, r3, #2
+ 1251              		.loc 1 141 41 view .LVU406
+ 1252 000c 43EAC103 		orr	r3, r3, r1, lsl #3
+ 1253              		.loc 1 141 21 view .LVU407
+ 1254 0010 80F85A30 		strb	r3, [r0, #90]
+ 142:Src/lcd.c     ****     LCDSendInstruction(interface);
+ 1255              		.loc 1 142 5 is_stmt 1 view .LVU408
+ 1256 0014 FFF7FEBF 		b	LCDSendInstruction
+ 1257              	.LVL73:
+ 1258              		.loc 1 142 5 is_stmt 0 view .LVU409
+ 1259              		.cfi_endproc
+ 1260              	.LFE140:
+ 1262              		.section	.text.MoveScreen,"ax",%progbits
+ 1263              		.align	1
+ 1264              		.p2align 2,,3
+ 1265              		.global	MoveScreen
+ 1266              		.syntax unified
+ 1267              		.thumb
+ 1268              		.thumb_func
+ 1269              		.fpu fpv4-sp-d16
+ 1271              	MoveScreen:
+ 1272              	.LVL74:
+ 1273              	.LFB141:
+ 143:Src/lcd.c     **** }
+ 144:Src/lcd.c     **** 
+ 145:Src/lcd.c     **** void MoveScreen(LCDInterface* interface, char direction){
+ 1274              		.loc 1 145 57 is_stmt 1 view -0
+ 1275              		.cfi_startproc
+ 1276              		@ args = 0, pretend = 0, frame = 0
+ 1277              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1278              		@ link register save eliminated.
+ 146:Src/lcd.c     ****     CursorDisplayShift(interface, (char[10]){0,0,0,0,0,0,0,0,1,direction});
+ 1279              		.loc 1 146 5 view .LVU411
+ 1280              	.LBB78:
+ 1281              	.LBB79:
+ARM GAS  /tmp/ccl2tiOX.s 			page 32
+
+
+ 141:Src/lcd.c     ****     LCDSendInstruction(interface);
+ 1282              		.loc 1 141 51 is_stmt 0 view .LVU412
+ 1283 0000 8900     		lsls	r1, r1, #2
+ 1284              	.LVL75:
+ 141:Src/lcd.c     ****     LCDSendInstruction(interface);
+ 1285              		.loc 1 141 51 view .LVU413
+ 1286              	.LBE79:
+ 1287              	.LBI78:
+ 139:Src/lcd.c     ****     interface->instruction = SHIFT;
+ 1288              		.loc 1 139 6 is_stmt 1 view .LVU414
+ 1289              	.LBB80:
+ 140:Src/lcd.c     ****     interface->data = (char)config[8]<<3|config[9]<<2;
+ 1290              		.loc 1 140 5 view .LVU415
+ 141:Src/lcd.c     ****     LCDSendInstruction(interface);
+ 1291              		.loc 1 141 41 is_stmt 0 view .LVU416
+ 1292 0002 41F00801 		orr	r1, r1, #8
+ 140:Src/lcd.c     ****     interface->data = (char)config[8]<<3|config[9]<<2;
+ 1293              		.loc 1 140 28 view .LVU417
+ 1294 0006 1022     		movs	r2, #16
+ 141:Src/lcd.c     ****     LCDSendInstruction(interface);
+ 1295              		.loc 1 141 21 view .LVU418
+ 1296 0008 80F85A10 		strb	r1, [r0, #90]
+ 140:Src/lcd.c     ****     interface->data = (char)config[8]<<3|config[9]<<2;
+ 1297              		.loc 1 140 28 view .LVU419
+ 1298 000c A0F85820 		strh	r2, [r0, #88]	@ movhi
+ 141:Src/lcd.c     ****     LCDSendInstruction(interface);
+ 1299              		.loc 1 141 5 is_stmt 1 view .LVU420
+ 142:Src/lcd.c     **** }
+ 1300              		.loc 1 142 5 view .LVU421
+ 1301 0010 FFF7FEBF 		b	LCDSendInstruction
+ 1302              	.LVL76:
+ 142:Src/lcd.c     **** }
+ 1303              		.loc 1 142 5 is_stmt 0 view .LVU422
+ 1304              	.LBE80:
+ 1305              	.LBE78:
+ 1306              		.cfi_endproc
+ 1307              	.LFE141:
+ 1309              		.section	.text.MoveCursor,"ax",%progbits
+ 1310              		.align	1
+ 1311              		.p2align 2,,3
+ 1312              		.global	MoveCursor
+ 1313              		.syntax unified
+ 1314              		.thumb
+ 1315              		.thumb_func
+ 1316              		.fpu fpv4-sp-d16
+ 1318              	MoveCursor:
+ 1319              	.LVL77:
+ 1320              	.LFB142:
+ 147:Src/lcd.c     **** }
+ 148:Src/lcd.c     **** 
+ 149:Src/lcd.c     **** void MoveCursor(LCDInterface* interface, char direction){
+ 1321              		.loc 1 149 57 is_stmt 1 view -0
+ 1322              		.cfi_startproc
+ 1323              		@ args = 0, pretend = 0, frame = 0
+ 1324              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1325              		@ link register save eliminated.
+ 150:Src/lcd.c     ****     CursorDisplayShift(interface, (char[10]){0,0,0,0,0,0,0,0,0,direction});
+ARM GAS  /tmp/ccl2tiOX.s 			page 33
+
+
+ 1326              		.loc 1 150 5 view .LVU424
+ 1327              	.LBB81:
+ 1328              	.LBI81:
+ 139:Src/lcd.c     ****     interface->instruction = SHIFT;
+ 1329              		.loc 1 139 6 view .LVU425
+ 1330              	.LBB82:
+ 140:Src/lcd.c     ****     interface->data = (char)config[8]<<3|config[9]<<2;
+ 1331              		.loc 1 140 5 view .LVU426
+ 141:Src/lcd.c     ****     LCDSendInstruction(interface);
+ 1332              		.loc 1 141 51 is_stmt 0 view .LVU427
+ 1333 0000 8900     		lsls	r1, r1, #2
+ 1334              	.LVL78:
+ 140:Src/lcd.c     ****     interface->data = (char)config[8]<<3|config[9]<<2;
+ 1335              		.loc 1 140 28 view .LVU428
+ 1336 0002 1022     		movs	r2, #16
+ 141:Src/lcd.c     ****     LCDSendInstruction(interface);
+ 1337              		.loc 1 141 41 view .LVU429
+ 1338 0004 80F85A10 		strb	r1, [r0, #90]
+ 140:Src/lcd.c     ****     interface->data = (char)config[8]<<3|config[9]<<2;
+ 1339              		.loc 1 140 28 view .LVU430
+ 1340 0008 A0F85820 		strh	r2, [r0, #88]	@ movhi
+ 141:Src/lcd.c     ****     LCDSendInstruction(interface);
+ 1341              		.loc 1 141 5 is_stmt 1 view .LVU431
+ 142:Src/lcd.c     **** }
+ 1342              		.loc 1 142 5 view .LVU432
+ 1343 000c FFF7FEBF 		b	LCDSendInstruction
+ 1344              	.LVL79:
+ 142:Src/lcd.c     **** }
+ 1345              		.loc 1 142 5 is_stmt 0 view .LVU433
+ 1346              	.LBE82:
+ 1347              	.LBE81:
+ 1348              		.cfi_endproc
+ 1349              	.LFE142:
+ 1351              		.text
+ 1352              	.Letext0:
+ 1353              		.file 2 "/usr/arm-none-eabi/include/machine/_default_types.h"
+ 1354              		.file 3 "/usr/arm-none-eabi/include/sys/lock.h"
+ 1355              		.file 4 "/usr/arm-none-eabi/include/sys/_types.h"
+ 1356              		.file 5 "/usr/lib/gcc/arm-none-eabi/8.2.0/include/stddef.h"
+ 1357              		.file 6 "/usr/arm-none-eabi/include/sys/reent.h"
+ 1358              		.file 7 "/usr/arm-none-eabi/include/sys/_stdint.h"
+ 1359              		.file 8 "Drivers/CMSIS/Include/core_cm4.h"
+ 1360              		.file 9 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h"
+ 1361              		.file 10 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f401xe.h"
+ 1362              		.file 11 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h"
+ 1363              		.file 12 "Inc/lcd.h"
+ 1364              		.file 13 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
+ARM GAS  /tmp/ccl2tiOX.s 			page 34
 
 
 DEFINED SYMBOLS
-                            *ABS*:00000000 lcd.c
-     /tmp/ccXyJqFc.s:22     .text.LCDInterfaceInitialisation:00000000 $t
-     /tmp/ccXyJqFc.s:27     .text.LCDInterfaceInitialisation:00000000 LCDInterfaceInitialisation
-     /tmp/ccXyJqFc.s:112    .text.LCDInterfaceInitialisation:00000058 $d
-     /tmp/ccXyJqFc.s:119    .text.PinChangeMode:00000000 $t
-     /tmp/ccXyJqFc.s:124    .text.PinChangeMode:00000000 PinChangeMode
-     /tmp/ccXyJqFc.s:178    .text.WaitLCD:00000000 $t
-     /tmp/ccXyJqFc.s:183    .text.WaitLCD:00000000 WaitLCD
-     /tmp/ccXyJqFc.s:246    .text.WaitLCD:00000058 $d
-     /tmp/ccXyJqFc.s:251    .text.LCDSendInstruction:00000000 $t
-     /tmp/ccXyJqFc.s:256    .text.LCDSendInstruction:00000000 LCDSendInstruction
-     /tmp/ccXyJqFc.s:330    .text.LCDSendChar:00000000 $t
-     /tmp/ccXyJqFc.s:335    .text.LCDSendChar:00000000 LCDSendChar
-     /tmp/ccXyJqFc.s:360    .text.LCDSendText:00000000 $t
-     /tmp/ccXyJqFc.s:365    .text.LCDSendText:00000000 LCDSendText
-     /tmp/ccXyJqFc.s:404    .text.InstructionFunctionSet:00000000 $t
-     /tmp/ccXyJqFc.s:409    .text.InstructionFunctionSet:00000000 InstructionFunctionSet
-     /tmp/ccXyJqFc.s:441    .text.InstructionFunctionSetStart:00000000 $t
-     /tmp/ccXyJqFc.s:446    .text.InstructionFunctionSetStart:00000000 InstructionFunctionSetStart
-     /tmp/ccXyJqFc.s:496    .text.InstructionDisplay:00000000 $t
-     /tmp/ccXyJqFc.s:501    .text.InstructionDisplay:00000000 InstructionDisplay
-     /tmp/ccXyJqFc.s:533    .text.InstructionEntryModeSet:00000000 $t
-     /tmp/ccXyJqFc.s:538    .text.InstructionEntryModeSet:00000000 InstructionEntryModeSet
-     /tmp/ccXyJqFc.s:566    .text.InstructionClearDisplay:00000000 $t
-     /tmp/ccXyJqFc.s:571    .text.InstructionClearDisplay:00000000 InstructionClearDisplay
-     /tmp/ccXyJqFc.s:597    .text.InstructionReturnHome:00000000 $t
-     /tmp/ccXyJqFc.s:602    .text.InstructionReturnHome:00000000 InstructionReturnHome
-     /tmp/ccXyJqFc.s:625    .text.LCDInit:00000000 $t
-     /tmp/ccXyJqFc.s:630    .text.LCDInit:00000000 LCDInit
-     /tmp/ccXyJqFc.s:688    .text.InstructionCurseurPosition:00000000 $t
-     /tmp/ccXyJqFc.s:693    .text.InstructionCurseurPosition:00000000 InstructionCurseurPosition
-     /tmp/ccXyJqFc.s:718    .text.CursorDisplayShift:00000000 $t
-     /tmp/ccXyJqFc.s:723    .text.CursorDisplayShift:00000000 CursorDisplayShift
-     /tmp/ccXyJqFc.s:752    .text.MoveScreen:00000000 $t
-     /tmp/ccXyJqFc.s:757    .text.MoveScreen:00000000 MoveScreen
-     /tmp/ccXyJqFc.s:798    .text.MoveCursor:00000000 $t
-     /tmp/ccXyJqFc.s:803    .text.MoveCursor:00000000 MoveCursor
-                     .debug_frame:00000010 $d
+                            *ABS*:0000000000000000 lcd.c
+     /tmp/ccl2tiOX.s:18     .text.LCDInterfaceInitialisation:0000000000000000 $t
+     /tmp/ccl2tiOX.s:27     .text.LCDInterfaceInitialisation:0000000000000000 LCDInterfaceInitialisation
+     /tmp/ccl2tiOX.s:147    .text.LCDInterfaceInitialisation:000000000000005c $d
+     /tmp/ccl2tiOX.s:152    .text.LCDSendInstruction:0000000000000000 $t
+     /tmp/ccl2tiOX.s:160    .text.LCDSendInstruction:0000000000000000 LCDSendInstruction
+     /tmp/ccl2tiOX.s:270    .text.LCDSendChar:0000000000000000 $t
+     /tmp/ccl2tiOX.s:278    .text.LCDSendChar:0000000000000000 LCDSendChar
+     /tmp/ccl2tiOX.s:302    .text.LCDSendText:0000000000000000 $t
+     /tmp/ccl2tiOX.s:310    .text.LCDSendText:0000000000000000 LCDSendText
+     /tmp/ccl2tiOX.s:383    .text.InstructionFunctionSet:0000000000000000 $t
+     /tmp/ccl2tiOX.s:391    .text.InstructionFunctionSet:0000000000000000 InstructionFunctionSet
+     /tmp/ccl2tiOX.s:438    .text.InstructionFunctionSetStart:0000000000000000 $t
+     /tmp/ccl2tiOX.s:446    .text.InstructionFunctionSetStart:0000000000000000 InstructionFunctionSetStart
+     /tmp/ccl2tiOX.s:561    .text.InstructionDisplay:0000000000000000 $t
+     /tmp/ccl2tiOX.s:569    .text.InstructionDisplay:0000000000000000 InstructionDisplay
+     /tmp/ccl2tiOX.s:616    .text.InstructionEntryModeSet:0000000000000000 $t
+     /tmp/ccl2tiOX.s:624    .text.InstructionEntryModeSet:0000000000000000 InstructionEntryModeSet
+     /tmp/ccl2tiOX.s:664    .text.InstructionClearDisplay:0000000000000000 $t
+     /tmp/ccl2tiOX.s:672    .text.InstructionClearDisplay:0000000000000000 InstructionClearDisplay
+     /tmp/ccl2tiOX.s:698    .text.InstructionReturnHome:0000000000000000 $t
+     /tmp/ccl2tiOX.s:706    .text.InstructionReturnHome:0000000000000000 InstructionReturnHome
+     /tmp/ccl2tiOX.s:726    .text.LCDInit:0000000000000000 $t
+     /tmp/ccl2tiOX.s:734    .text.LCDInit:0000000000000000 LCDInit
+     /tmp/ccl2tiOX.s:1069   .text.LCDInit:0000000000000100 $d
+     /tmp/ccl2tiOX.s:1076   .text.InstructionCurseurPosition:0000000000000000 $t
+     /tmp/ccl2tiOX.s:1084   .text.InstructionCurseurPosition:0000000000000000 InstructionCurseurPosition
+     /tmp/ccl2tiOX.s:1108   .text.PinChangeMode:0000000000000000 $t
+     /tmp/ccl2tiOX.s:1116   .text.PinChangeMode:0000000000000000 PinChangeMode
+     /tmp/ccl2tiOX.s:1169   .text.WaitLCD:0000000000000000 $t
+     /tmp/ccl2tiOX.s:1177   .text.WaitLCD:0000000000000000 WaitLCD
+     /tmp/ccl2tiOX.s:1223   .text.CursorDisplayShift:0000000000000000 $t
+     /tmp/ccl2tiOX.s:1231   .text.CursorDisplayShift:0000000000000000 CursorDisplayShift
+     /tmp/ccl2tiOX.s:1263   .text.MoveScreen:0000000000000000 $t
+     /tmp/ccl2tiOX.s:1271   .text.MoveScreen:0000000000000000 MoveScreen
+     /tmp/ccl2tiOX.s:1310   .text.MoveCursor:0000000000000000 $t
+     /tmp/ccl2tiOX.s:1318   .text.MoveCursor:0000000000000000 MoveCursor
 
 UNDEFINED SYMBOLS
+HAL_GPIO_WritePin
+HAL_Delay
 HAL_GPIO_DeInit
 HAL_GPIO_Init
-HAL_GPIO_WritePin
-HAL_GPIO_ReadPin
-HAL_Delay

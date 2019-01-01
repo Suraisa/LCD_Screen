@@ -5,7 +5,7 @@
 #include "main.h"
 
 
-typedef enum lcdInstructionE{
+typedef enum{
     CLEARDISPLAY = 0x1,
     RETURNHOME = 0x2,
     ENTRYMODESET = 0x4,
@@ -15,20 +15,34 @@ typedef enum lcdInstructionE{
     SETDDRAM = 0x40,
     BUSY = 0x80,
     WRITE = 0x200
-}LcdInstruction;
+}LCD_INSTRUCTION;
+
+typedef struct
+{
+    unsigned ID:1;
+    unsigned S:1;
+    unsigned D:1;
+    unsigned C:1;
+    unsigned B:1;
+    unsigned DL:1;
+    unsigned N:1;
+    unsigned F:1;
+    unsigned SC:1;
+    unsigned RL:1;
+} CONFIG;
 
 typedef struct{
     GPIO_TypeDef* port;
     uint16_t pin;
-} Adresse;
+} ADRESSE;
 
 /*
-Tableau d'adresse :
+Tableau d'ADRESSE :
 D0 D1 D2 D3 D4 D5 D6 D7 RW RS E
 */
 typedef struct{
-    Adresse pinout[11];
-    LcdInstruction instruction;
+    ADRESSE pinout[11];
+    LCD_INSTRUCTION instruction;
     char data;
 }LCDInterface;
 
@@ -81,8 +95,8 @@ void CursorDisplayShift(LCDInterface*, char config[10]);
 
 
 /*
-Positionner le curseur a l'adresse DDRAM,
-Sachant que l'ecran a les adresses dans l'ordre suivante :
+Positionner le curseur a l'ADRESSE DDRAM,
+Sachant que l'ecran a les ADRESSEs dans l'ordre suivante :
 Ligne 1 : 00 ---> 0F
 Ligne 2 : 40 ---> 4F
 

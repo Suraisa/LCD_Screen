@@ -1,33 +1,33 @@
-ARM GAS  /tmp/cctifCrw.s 			page 1
+ARM GAS  /tmp/ccW8hDK4.s 			page 1
 
 
-   1              		.syntax unified
-   2              		.cpu cortex-m4
-   3              		.eabi_attribute 27, 1
-   4              		.eabi_attribute 28, 1
-   5              		.fpu fpv4-sp-d16
-   6              		.eabi_attribute 20, 1
-   7              		.eabi_attribute 21, 1
-   8              		.eabi_attribute 23, 3
-   9              		.eabi_attribute 24, 1
-  10              		.eabi_attribute 25, 1
-  11              		.eabi_attribute 26, 1
-  12              		.eabi_attribute 30, 1
-  13              		.eabi_attribute 34, 1
-  14              		.eabi_attribute 18, 4
-  15              		.thumb
-  16              		.syntax unified
-  17              		.file	"stm32f4xx_hal_msp.c"
-  18              		.text
-  19              	.Ltext0:
-  20              		.cfi_sections	.debug_frame
-  21              		.section	.text.HAL_MspInit,"ax",%progbits
-  22              		.align	2
-  23              		.global	HAL_MspInit
-  24              		.thumb
-  25              		.thumb_func
+   1              		.cpu cortex-m4
+   2              		.eabi_attribute 27, 1
+   3              		.eabi_attribute 28, 1
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 2
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"stm32f4xx_hal_msp.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.text.HAL_MspInit,"ax",%progbits
+  18              		.align	1
+  19              		.p2align 2,,3
+  20              		.global	HAL_MspInit
+  21              		.arch armv7e-m
+  22              		.syntax unified
+  23              		.thumb
+  24              		.thumb_func
+  25              		.fpu fpv4-sp-d16
   27              	HAL_MspInit:
-  28              	.LFB124:
+  28              	.LFB126:
   29              		.file 1 "Src/stm32f4xx_hal_msp.c"
    1:Src/stm32f4xx_hal_msp.c **** /**
    2:Src/stm32f4xx_hal_msp.c ****   ******************************************************************************
@@ -41,7 +41,7 @@ ARM GAS  /tmp/cctifCrw.s 			page 1
   10:Src/stm32f4xx_hal_msp.c ****   * inserted by the user or by software development tools
   11:Src/stm32f4xx_hal_msp.c ****   * are owned by their respective copyright owners.
   12:Src/stm32f4xx_hal_msp.c ****   *
-  13:Src/stm32f4xx_hal_msp.c ****   * COPYRIGHT(c) 2018 STMicroelectronics
+  13:Src/stm32f4xx_hal_msp.c ****   * COPYRIGHT(c) 2019 STMicroelectronics
   14:Src/stm32f4xx_hal_msp.c ****   *
   15:Src/stm32f4xx_hal_msp.c ****   * Redistribution and use in source and binary forms, with or without modification,
   16:Src/stm32f4xx_hal_msp.c ****   * are permitted provided that the following conditions are met:
@@ -58,7 +58,7 @@ ARM GAS  /tmp/cctifCrw.s 			page 1
   27:Src/stm32f4xx_hal_msp.c ****   * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
   28:Src/stm32f4xx_hal_msp.c ****   * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
   29:Src/stm32f4xx_hal_msp.c ****   * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
-ARM GAS  /tmp/cctifCrw.s 			page 2
+ARM GAS  /tmp/ccW8hDK4.s 			page 2
 
 
   30:Src/stm32f4xx_hal_msp.c ****   * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
@@ -82,103 +82,125 @@ ARM GAS  /tmp/cctifCrw.s 			page 1
   48:Src/stm32f4xx_hal_msp.c ****   */
   49:Src/stm32f4xx_hal_msp.c **** void HAL_MspInit(void)
   50:Src/stm32f4xx_hal_msp.c **** {
-  30              		.loc 1 50 0
+  30              		.loc 1 50 1 view -0
   31              		.cfi_startproc
   32              		@ args = 0, pretend = 0, frame = 0
   33              		@ frame_needed = 0, uses_anonymous_args = 0
-  34 0000 08B5     		push	{r3, lr}
-  35              	.LCFI0:
-  36              		.cfi_def_cfa_offset 8
-  37              		.cfi_offset 3, -8
-  38              		.cfi_offset 14, -4
   51:Src/stm32f4xx_hal_msp.c ****   /* USER CODE BEGIN MspInit 0 */
   52:Src/stm32f4xx_hal_msp.c **** 
   53:Src/stm32f4xx_hal_msp.c ****   /* USER CODE END MspInit 0 */
   54:Src/stm32f4xx_hal_msp.c **** 
   55:Src/stm32f4xx_hal_msp.c ****   HAL_NVIC_SetPriorityGrouping(NVIC_PRIORITYGROUP_0);
-  39              		.loc 1 55 0
-  40 0002 0720     		movs	r0, #7
-  41 0004 FFF7FEFF 		bl	HAL_NVIC_SetPriorityGrouping
-  42              	.LVL0:
+  34              		.loc 1 55 3 view .LVU1
+  50:Src/stm32f4xx_hal_msp.c ****   /* USER CODE BEGIN MspInit 0 */
+  35              		.loc 1 50 1 is_stmt 0 view .LVU2
+  36 0000 08B5     		push	{r3, lr}
+  37              	.LCFI0:
+  38              		.cfi_def_cfa_offset 8
+  39              		.cfi_offset 3, -8
+  40              		.cfi_offset 14, -4
+  41              		.loc 1 55 3 view .LVU3
+  42 0002 0720     		movs	r0, #7
+  43 0004 FFF7FEFF 		bl	HAL_NVIC_SetPriorityGrouping
+  44              	.LVL0:
   56:Src/stm32f4xx_hal_msp.c **** 
   57:Src/stm32f4xx_hal_msp.c ****   /* System interrupt init*/
   58:Src/stm32f4xx_hal_msp.c ****   /* MemoryManagement_IRQn interrupt configuration */
   59:Src/stm32f4xx_hal_msp.c ****   HAL_NVIC_SetPriority(MemoryManagement_IRQn, 0, 0);
-  43              		.loc 1 59 0
-  44 0008 0022     		movs	r2, #0
-  45 000a 1146     		mov	r1, r2
-  46 000c 6FF00B00 		mvn	r0, #11
-  47 0010 FFF7FEFF 		bl	HAL_NVIC_SetPriority
-  48              	.LVL1:
+  45              		.loc 1 59 3 is_stmt 1 view .LVU4
+  46 0008 0022     		movs	r2, #0
+  47 000a 1146     		mov	r1, r2
+  48 000c 6FF00B00 		mvn	r0, #11
+  49 0010 FFF7FEFF 		bl	HAL_NVIC_SetPriority
+  50              	.LVL1:
   60:Src/stm32f4xx_hal_msp.c ****   /* BusFault_IRQn interrupt configuration */
   61:Src/stm32f4xx_hal_msp.c ****   HAL_NVIC_SetPriority(BusFault_IRQn, 0, 0);
-  49              		.loc 1 61 0
-  50 0014 0022     		movs	r2, #0
-  51 0016 1146     		mov	r1, r2
-  52 0018 6FF00A00 		mvn	r0, #10
-  53 001c FFF7FEFF 		bl	HAL_NVIC_SetPriority
-  54              	.LVL2:
-ARM GAS  /tmp/cctifCrw.s 			page 3
+  51              		.loc 1 61 3 view .LVU5
+  52 0014 0022     		movs	r2, #0
+  53 0016 1146     		mov	r1, r2
+ARM GAS  /tmp/ccW8hDK4.s 			page 3
 
 
+  54 0018 6FF00A00 		mvn	r0, #10
+  55 001c FFF7FEFF 		bl	HAL_NVIC_SetPriority
+  56              	.LVL2:
   62:Src/stm32f4xx_hal_msp.c ****   /* UsageFault_IRQn interrupt configuration */
   63:Src/stm32f4xx_hal_msp.c ****   HAL_NVIC_SetPriority(UsageFault_IRQn, 0, 0);
-  55              		.loc 1 63 0
-  56 0020 0022     		movs	r2, #0
-  57 0022 1146     		mov	r1, r2
-  58 0024 6FF00900 		mvn	r0, #9
-  59 0028 FFF7FEFF 		bl	HAL_NVIC_SetPriority
-  60              	.LVL3:
+  57              		.loc 1 63 3 view .LVU6
+  58 0020 0022     		movs	r2, #0
+  59 0022 1146     		mov	r1, r2
+  60 0024 6FF00900 		mvn	r0, #9
+  61 0028 FFF7FEFF 		bl	HAL_NVIC_SetPriority
+  62              	.LVL3:
   64:Src/stm32f4xx_hal_msp.c ****   /* SVCall_IRQn interrupt configuration */
   65:Src/stm32f4xx_hal_msp.c ****   HAL_NVIC_SetPriority(SVCall_IRQn, 0, 0);
-  61              		.loc 1 65 0
-  62 002c 0022     		movs	r2, #0
-  63 002e 1146     		mov	r1, r2
-  64 0030 6FF00400 		mvn	r0, #4
-  65 0034 FFF7FEFF 		bl	HAL_NVIC_SetPriority
-  66              	.LVL4:
+  63              		.loc 1 65 3 view .LVU7
+  64 002c 0022     		movs	r2, #0
+  65 002e 1146     		mov	r1, r2
+  66 0030 6FF00400 		mvn	r0, #4
+  67 0034 FFF7FEFF 		bl	HAL_NVIC_SetPriority
+  68              	.LVL4:
   66:Src/stm32f4xx_hal_msp.c ****   /* DebugMonitor_IRQn interrupt configuration */
   67:Src/stm32f4xx_hal_msp.c ****   HAL_NVIC_SetPriority(DebugMonitor_IRQn, 0, 0);
-  67              		.loc 1 67 0
-  68 0038 0022     		movs	r2, #0
-  69 003a 1146     		mov	r1, r2
-  70 003c 6FF00300 		mvn	r0, #3
-  71 0040 FFF7FEFF 		bl	HAL_NVIC_SetPriority
-  72              	.LVL5:
+  69              		.loc 1 67 3 view .LVU8
+  70 0038 0022     		movs	r2, #0
+  71 003a 1146     		mov	r1, r2
+  72 003c 6FF00300 		mvn	r0, #3
+  73 0040 FFF7FEFF 		bl	HAL_NVIC_SetPriority
+  74              	.LVL5:
   68:Src/stm32f4xx_hal_msp.c ****   /* PendSV_IRQn interrupt configuration */
   69:Src/stm32f4xx_hal_msp.c ****   HAL_NVIC_SetPriority(PendSV_IRQn, 0, 0);
-  73              		.loc 1 69 0
-  74 0044 0022     		movs	r2, #0
-  75 0046 1146     		mov	r1, r2
-  76 0048 6FF00100 		mvn	r0, #1
-  77 004c FFF7FEFF 		bl	HAL_NVIC_SetPriority
-  78              	.LVL6:
+  75              		.loc 1 69 3 view .LVU9
+  76 0044 0022     		movs	r2, #0
+  77 0046 1146     		mov	r1, r2
+  78 0048 6FF00100 		mvn	r0, #1
+  79 004c FFF7FEFF 		bl	HAL_NVIC_SetPriority
+  80              	.LVL6:
   70:Src/stm32f4xx_hal_msp.c ****   /* SysTick_IRQn interrupt configuration */
   71:Src/stm32f4xx_hal_msp.c ****   HAL_NVIC_SetPriority(SysTick_IRQn, 0, 0);
-  79              		.loc 1 71 0
-  80 0050 0022     		movs	r2, #0
-  81 0052 1146     		mov	r1, r2
-  82 0054 4FF0FF30 		mov	r0, #-1
-  83 0058 FFF7FEFF 		bl	HAL_NVIC_SetPriority
-  84              	.LVL7:
-  85 005c 08BD     		pop	{r3, pc}
-  86              		.cfi_endproc
-  87              	.LFE124:
-  89 005e 00BF     		.text
-  90              	.Letext0:
-  91              		.file 2 "/usr/include/newlib/machine/_default_types.h"
-  92              		.file 3 "/usr/include/newlib/sys/_stdint.h"
-  93              		.file 4 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h"
-  94              		.file 5 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f401xe.h"
-  95              		.file 6 "Drivers/CMSIS/Include/core_cm4.h"
-ARM GAS  /tmp/cctifCrw.s 			page 4
+  81              		.loc 1 71 3 view .LVU10
+  82 0050 0022     		movs	r2, #0
+  83 0052 1146     		mov	r1, r2
+  84 0054 4FF0FF30 		mov	r0, #-1
+  72:Src/stm32f4xx_hal_msp.c **** 
+  73:Src/stm32f4xx_hal_msp.c ****   /* USER CODE BEGIN MspInit 1 */
+  74:Src/stm32f4xx_hal_msp.c **** 
+  75:Src/stm32f4xx_hal_msp.c ****   /* USER CODE END MspInit 1 */
+  76:Src/stm32f4xx_hal_msp.c **** }
+  85              		.loc 1 76 1 is_stmt 0 view .LVU11
+  86 0058 BDE80840 		pop	{r3, lr}
+  87              	.LCFI1:
+  88              		.cfi_restore 14
+  89              		.cfi_restore 3
+  90              		.cfi_def_cfa_offset 0
+  71:Src/stm32f4xx_hal_msp.c **** 
+  91              		.loc 1 71 3 view .LVU12
+  92 005c FFF7FEBF 		b	HAL_NVIC_SetPriority
+  93              	.LVL7:
+  94              		.cfi_endproc
+ARM GAS  /tmp/ccW8hDK4.s 			page 4
+
+
+  95              	.LFE126:
+  97              		.text
+  98              	.Letext0:
+  99              		.file 2 "/usr/arm-none-eabi/include/machine/_default_types.h"
+ 100              		.file 3 "/usr/arm-none-eabi/include/sys/_stdint.h"
+ 101              		.file 4 "Drivers/CMSIS/Include/core_cm4.h"
+ 102              		.file 5 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h"
+ 103              		.file 6 "/usr/arm-none-eabi/include/sys/lock.h"
+ 104              		.file 7 "/usr/arm-none-eabi/include/sys/_types.h"
+ 105              		.file 8 "/usr/lib/gcc/arm-none-eabi/8.2.0/include/stddef.h"
+ 106              		.file 9 "/usr/arm-none-eabi/include/sys/reent.h"
+ 107              		.file 10 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h"
+ 108              		.file 11 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f401xe.h"
+ARM GAS  /tmp/ccW8hDK4.s 			page 5
 
 
 DEFINED SYMBOLS
-                            *ABS*:00000000 stm32f4xx_hal_msp.c
-     /tmp/cctifCrw.s:22     .text.HAL_MspInit:00000000 $t
-     /tmp/cctifCrw.s:27     .text.HAL_MspInit:00000000 HAL_MspInit
-                     .debug_frame:00000010 $d
+                            *ABS*:0000000000000000 stm32f4xx_hal_msp.c
+     /tmp/ccW8hDK4.s:18     .text.HAL_MspInit:0000000000000000 $t
+     /tmp/ccW8hDK4.s:27     .text.HAL_MspInit:0000000000000000 HAL_MspInit
 
 UNDEFINED SYMBOLS
 HAL_NVIC_SetPriorityGrouping
